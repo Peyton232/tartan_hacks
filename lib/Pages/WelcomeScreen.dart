@@ -3,6 +3,8 @@ import 'package:tartan_hacks/CustomWidgets/Categories/CategoriesContainer.dart';
 import 'package:tartan_hacks/CustomWidgets/Events/EventsContainer.dart';
 import 'package:tartan_hacks/CustomWidgets/Reminders/RemindersContainer.dart';
 import 'package:tartan_hacks/Data/constants.dart';
+import 'package:tartan_hacks/CustomWidgets/Reminders/ReminderCard.dart';
+import '../database/database.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
