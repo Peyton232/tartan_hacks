@@ -40,7 +40,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             CategoriesContainer(),
             ElevatedButton(
               onPressed: () => {
-                sendData("example data"),
+                //sendData("example data 2 electric boogaloo"),
+                 readData(),
               },
             ),
           ],
