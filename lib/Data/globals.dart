@@ -6,6 +6,9 @@ import '../CustomWidgets/Reminders/ReminderCard.dart';
 import '../CustomWidgets/Categories/CategoryCard.dart';
 import 'package:tartan_hacks/Data/constants.dart';
 
+
+int counter = 0;
+
 //hardcoded a few starting ones
 List<EventCard> Events = [
   EventCard(
