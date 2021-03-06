@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "500102930617",
+    "project_id": "motivation-bot-447e2",
+    "storage_bucket": "motivation-bot-447e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500102930617:android:d75cfed50d27fae7d27b68",
+        "android_client_info": {
+          "package_name": "com.example.tartan_hacks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500102930617-7e3v1ugnmsn2rcb4f8dmeq7ej8ngda0p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tartan_hacks",
+            "certificate_hash": "5e44218f1da863cd960f8371887c2fd3cddfbd29"
+          }
+        },
+        {
+          "client_id": "500102930617-04q6tjgadvj1a1d5h4itsf9av8v1cqga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0mbTXbtbO-UbN41s8VQW8VHW_G18ZM-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500102930617-04q6tjgadvj1a1d5h4itsf9av8v1cqga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
