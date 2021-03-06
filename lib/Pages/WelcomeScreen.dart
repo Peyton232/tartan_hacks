@@ -28,16 +28,33 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: <Widget>[
             Container(
               decoration: BoxDecoration(
-                color: kPurple,
+                color: kDarkPurple,
               ),
               height: 400,
               child: Center(
                 child: Text("Plasma Looking Background and robot man"),
               ),
             ),
+            ElevatedButton(
+              onPressed: () {
+                print("Add stuff here");
+              },
+              child: Text("Add Event"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                print("Add stuff here");
+              },
+              child: Text("Add Reminder"),
+            ),
             UpcomingEvents(),
             UpcomingReminders(),
             CategoriesContainer(),
+            ElevatedButton(
+              onPressed: () => {
+                sendData("example data"),
+              },
+            ),
           ],
         ),
       ),

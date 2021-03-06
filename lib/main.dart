@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'MotieBot',
       theme: ThemeData(
-        primaryColor: kPurple,
+        primaryColor: kDarkPurple,
         scaffoldBackgroundColor: kOffWhite,
       ),
       initialRoute: "/WelcomeScreen",

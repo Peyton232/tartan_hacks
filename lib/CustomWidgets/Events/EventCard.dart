@@ -35,6 +35,7 @@ class _EventCardState extends State<EventCard> {
       ),
       onPressed: () {
         print("Top 3 upcoming calendar events");
+        //Navigate to event page
         widget.buttonPressed();
       },
       child: Container(
