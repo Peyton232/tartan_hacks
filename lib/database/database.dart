@@ -19,15 +19,15 @@ DatabaseReference sendData(String test) {
   return id;
 }
 
-Future<void> readData() async {
+Future<String> readData() async {
   // databaseReference.once().then((DataSnapshot snapshot) {
   //   print('Data : ${snapshot.value}');
   // });
   String result = (await FirebaseDatabase.instance.reference().child("fromPython/message").once()).value;
-  print(result);
 
   //remove to and from python descriptors---------------------------------------------------------------------------------uncomment later
   //databaseReference.child('fromPython').remove();
-  //databaseReference.child('toPython').remove();
+  databaseReference.child('toPython').remove();
+  return(result);
 }
 
