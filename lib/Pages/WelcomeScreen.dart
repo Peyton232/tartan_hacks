@@ -3,7 +3,6 @@ import 'package:tartan_hacks/CustomWidgets/Categories/CategoriesContainer.dart';
 import 'package:tartan_hacks/CustomWidgets/Events/EventsContainer.dart';
 import 'package:tartan_hacks/CustomWidgets/Reminders/RemindersContainer.dart';
 import 'package:tartan_hacks/Data/constants.dart';
-import 'package:tartan_hacks/CustomWidgets/Reminders/ReminderCard.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -17,7 +16,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.deepPurple,
         onPressed: () {
-          print("Go to calendar");
+          Navigator.pushNamed(context, "/CalendarScreen");
         },
         child: Icon(Icons.calendar_today),
       ),
@@ -31,7 +30,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
               height: 400,
               child: Center(
-                child: Text("Plasma Looking Background"),
+                child: Text("Plasma Looking Background and robot man"),
               ),
             ),
             UpcomingEvents(),

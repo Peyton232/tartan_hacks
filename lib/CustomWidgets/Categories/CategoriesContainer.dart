@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tartan_hacks/CustomWidgets/Categories/CategoryTemplatePage.dart';
 import 'package:tartan_hacks/Data/constants.dart';
 import 'package:tartan_hacks/CustomWidgets/Categories/CategoryCard.dart';
 
@@ -40,6 +41,16 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                       amountOfItems: 3,
                       categoryIcon: Icons.free_breakfast,
                       categoryColor: kRed,
+                      buttonPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CategoryTemplatePage(
+                              categoryName: "(Category)",
+                            ),
+                          ),
+                        );
+                      },
                     ),
                   ),
                   Padding(
@@ -51,6 +62,16 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                       amountOfItems: 3,
                       categoryIcon: Icons.laptop_mac,
                       categoryColor: kGreen,
+                      buttonPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CategoryTemplatePage(
+                              categoryName: "(Category)",
+                            ),
+                          ),
+                        );
+                      },
                     ),
                   ),
                   Padding(
@@ -62,6 +83,16 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                       amountOfItems: 2,
                       categoryIcon: Icons.home,
                       categoryColor: kBlue,
+                      buttonPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CategoryTemplatePage(
+                              categoryName: "(Category)",
+                            ),
+                          ),
+                        );
+                      },
                     ),
                   ),
                   Padding(
@@ -73,6 +104,16 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                       amountOfItems: 2,
                       categoryIcon: Icons.directions_car,
                       categoryColor: kYellow,
+                      buttonPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CategoryTemplatePage(
+                              categoryName: "(Category)",
+                            ),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ],
