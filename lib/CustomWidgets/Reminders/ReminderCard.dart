@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tartan_hacks/Data/constants.dart';
+import 'ReminderTemplatePage.dart';
 
 class ReminderCard extends StatefulWidget {
   final String reminderName;
@@ -34,8 +35,21 @@ class _ReminderCardState extends State<ReminderCard> {
         overlayColor: MaterialStateProperty.all<Color>(Colors.grey[300]),
       ),
       onPressed: () {
-        print("Top 3 upcoming reminders");
-        widget.buttonPressed();
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ReminderTemplatePage(
+              //Navigate to subpage
+              reminderName: widget.reminderName,
+              reminderNotes: widget.reminderNotes,
+              reminderDate: widget.reminderDate,
+              reminderTime: widget.reminderTime,
+              categoryIcon: widget.categoryIcon,
+              categoryColor: widget.categoryColor,
+            ),
+          ),
+        );
+        //widget.buttonPressed();
       },
       child: Container(
         width: 330,

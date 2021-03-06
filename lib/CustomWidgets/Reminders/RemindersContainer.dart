@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tartan_hacks/CustomWidgets/Reminders/ReminderTemplatePage.dart';
 import 'package:tartan_hacks/Data/constants.dart';
 import 'package:tartan_hacks/CustomWidgets/Reminders/ReminderCard.dart';
+import 'package:tartan_hacks/Data/globals.dart' as globals;
 
 class UpcomingReminders extends StatefulWidget {
   @override
@@ -15,79 +16,43 @@ class _UpcomingRemindersState extends State<UpcomingReminders> {
       child: Column(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.symmetric(vertical: 25.0, horizontal: 10.0),
+            padding: EdgeInsets.only(
+              top: 25.0,
+              left: 10.0,
+              right: 10.0,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                //TODO: Build cards from a list
                 Text(
-                  "Upcoming Reminders",
+                  "Upcoming Events",
                   style: kHeaderTextStyle,
                 ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15.0),
-                  child: ReminderCard(
-                    reminderName: "Reminder Name",
-                    reminderNotes: "Reminder Notes",
-                    reminderDate: "March 5",
-                    reminderTime: "10:00 PM",
-                    categoryIcon: Icons.check_circle,
-                    categoryColor: kRed,
-                    buttonPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ReminderTemplatePage(
-                            reminderName: "(Certain reminder)",
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15.0),
-                  child: ReminderCard(
-                    reminderName: "Reminder Name",
-                    reminderNotes: "Reminder Notes",
-                    reminderDate: "March 5",
-                    reminderTime: "10:00 PM",
-                    categoryIcon: Icons.check_circle,
-                    categoryColor: kRed,
-                    buttonPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ReminderTemplatePage(
-                            reminderName: "(Certain reminder)",
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15.0),
-                  child: ReminderCard(
-                    reminderName: "Reminder Name",
-                    reminderNotes: "Reminder Notes",
-                    reminderDate: "March 5",
-                    reminderTime: "10:00 PM",
-                    categoryIcon: Icons.check_circle,
-                    categoryColor: kBlue,
-                    buttonPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ReminderTemplatePage(
-                            reminderName: "(Certain reminder)",
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
               ],
+            ),
+          ),
+          Container(
+            child: ListView.builder(
+              physics: ClampingScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: globals.Events.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ReminderCard(
+                    reminderName: globals.Reminds[index].reminderName,
+                    reminderNotes: globals.Reminds[index].reminderNotes,
+                    reminderDate: globals.Reminds[index].reminderDate,
+                    reminderTime: globals.Reminds[index].reminderTime,
+                    categoryIcon: globals.Reminds[index].categoryIcon,
+                    categoryColor: globals.Reminds[index].categoryColor,
+                    //setup subpage here
+                    // paragraph: globals.Events[index].paragraph,
+                    // stepsA: globals.Events[index].steps,
+                    // videoKey: globals.Events[index].video,
+                  ),
+                );
+              },
             ),
           ),
         ],

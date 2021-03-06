@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tartan_hacks/Data/constants.dart';
+import 'package:tartan_hacks/Data/globals.dart' as globals;
 import 'package:tartan_hacks/CustomWidgets/Events/EventCard.dart';
 import 'package:tartan_hacks/CustomWidgets/Events/EventTemplatePage.dart';
 
@@ -27,70 +28,31 @@ class _UpcomingEventsState extends State<UpcomingEvents> {
                   "Upcoming Events",
                   style: kHeaderTextStyle,
                 ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15.0),
-                  child: EventCard(
-                    eventName: "Calendar Event Name",
-                    eventNotes: "Calendar Notes",
-                    eventDate: "March 5",
-                    eventTime: "5:00 PM",
-                    categoryIcon: Icons.home,
-                    categoryColor: kRed,
-                    buttonPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => EventTemplatePage(
-                            eventName: "(Certain Event)",
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15.0),
-                  child: EventCard(
-                    eventName: "Calendar Event Name",
-                    eventNotes: "Calendar Notes",
-                    eventDate: "March 6",
-                    eventTime: "5:00 PM",
-                    categoryIcon: Icons.directions_run,
-                    categoryColor: kGreen,
-                    buttonPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => EventTemplatePage(
-                            eventName: "(Certain Event)",
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15.0),
-                  child: EventCard(
-                    eventName: "Calendar Event Name",
-                    eventNotes: "Calendar Notes",
-                    eventDate: "March 7",
-                    eventTime: "5:00 PM",
-                    categoryIcon: Icons.description,
-                    categoryColor: kBlue,
-                    buttonPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => EventTemplatePage(
-                            eventName: "(Certain Event)",
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
               ],
+            ),
+          ),
+          Container(
+            child: ListView.builder(
+              physics: ClampingScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: globals.Events.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: EventCard(
+                    eventName: globals.Events[index].eventName,
+                    eventNotes: globals.Events[index].eventNotes,
+                    eventDate: globals.Events[index].eventDate,
+                    eventTime: globals.Events[index].eventTime,
+                    categoryIcon: globals.Events[index].categoryIcon,
+                    categoryColor: globals.Events[index].categoryColor,
+                    //setup subpage here
+                    // paragraph: globals.Events[index].paragraph,
+                    // stepsA: globals.Events[index].steps,
+                    // videoKey: globals.Events[index].video,
+                  ),
+                );
+              },
             ),
           ),
         ],

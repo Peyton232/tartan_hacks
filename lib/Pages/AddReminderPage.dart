@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class AddEventPage extends StatelessWidget {
+
+
+class AddReminderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,7 +11,7 @@ class AddEventPage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         title: Text(
-          "Add Event",
+          "Add Reminders",
           //style: kAppBarTextStyle,
         ),
       ),
