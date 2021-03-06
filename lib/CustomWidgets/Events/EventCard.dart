@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tartan_hacks/CustomWidgets/Events/EventTemplatePage.dart';
 import 'package:tartan_hacks/Data/constants.dart';
 
 class EventCard extends StatefulWidget {
@@ -34,8 +35,21 @@ class _EventCardState extends State<EventCard> {
         overlayColor: MaterialStateProperty.all<Color>(Colors.grey[300]),
       ),
       onPressed: () {
-        print("Top 3 upcoming calendar events");
-        widget.buttonPressed();
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => EventTemplatePage(
+              //Navigate to subpage
+              eventName: widget.eventName,
+              eventNotes: widget.eventNotes,
+              eventDate: widget.eventDate,
+              eventTime: widget.eventTime,
+              categoryIcon: widget.categoryIcon,
+              categoryColor: widget.categoryColor,
+            ),
+          ),
+        );
+        //widget.buttonPressed();
       },
       child: Container(
         width: 330,
