@@ -7,6 +7,7 @@ import 'package:tartan_hacks/CustomWidgets/Reminders/ReminderCard.dart';
 import '../database/database.dart';
 import 'AddEventPage.dart';
 import 'AddReminderPage.dart';
+import 'MotiPage.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -28,15 +29,26 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              decoration: BoxDecoration(
-                color: kDarkPurple,
-              ),
-              height: 400,
-              child: Center(
-                child: Text("Plasma Looking Background and robot man"),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MotiPage(),
+                  ),
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: kDarkPurple,
+                ),
+                height: 400,
+                child: Center(
+                  child: Text("Plasma Looking Background and robot man"),
+                ),
               ),
             ),
+
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
