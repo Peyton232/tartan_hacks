@@ -8,6 +8,7 @@ class EventCard extends StatefulWidget {
   final String eventTime;
   final IconData categoryIcon;
   final Color categoryColor;
+  final Function buttonPressed;
 
   EventCard({
     @required this.eventName,
@@ -16,6 +17,7 @@ class EventCard extends StatefulWidget {
     @required this.eventTime,
     @required this.categoryIcon,
     @required this.categoryColor,
+    this.buttonPressed,
   });
 
   @override
@@ -33,6 +35,7 @@ class _EventCardState extends State<EventCard> {
       ),
       onPressed: () {
         print("Top 3 upcoming calendar events");
+        widget.buttonPressed();
       },
       child: Container(
         width: 330,

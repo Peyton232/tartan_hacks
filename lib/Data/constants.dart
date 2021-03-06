@@ -7,6 +7,7 @@ const kRed = Color(0xffCE3D57);
 const kGreen = Color(0xff31A16C);
 const kBlue = Color(0xff379CF9);
 const kYellow = Color(0xffFFD74B);
+//TODO: Change color of Yellow
 
 const kHeaderTextStyle = TextStyle(
   fontSize: 20.0,

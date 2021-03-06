@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tartan_hacks/CustomWidgets/Reminders/ReminderTemplatePage.dart';
 import 'package:tartan_hacks/Pages/WelcomeScreen.dart';
 import 'package:tartan_hacks/Data/constants.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       //This is where you will put the different pages we can navigate to
       routes: {
         "/WelcomeScreen": (context) => WelcomeScreen(),
+        "/ReminderTemplatePage": (context) => ReminderTemplatePage(),
       },
     );
   }
