@@ -30,7 +30,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: <Widget>[
             Container(
               decoration: BoxDecoration(
-                color: kPurple,
+                color: kDarkPurple,
               ),
               height: 400,
               child: Center(
