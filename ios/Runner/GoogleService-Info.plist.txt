@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>500102930617-nh37nqfnlj2jbqimb51ol4vpa59r0hqo.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.500102930617-nh37nqfnlj2jbqimb51ol4vpa59r0hqo</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>500102930617-7e3v1ugnmsn2rcb4f8dmeq7ej8ngda0p.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCNFaprQC7vJ_VCqL75HVbrbOOIP8x7Eh0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>500102930617</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.tartanHacks</string>
+	<key>PROJECT_ID</key>
+	<string>motivation-bot-447e2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>motivation-bot-447e2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:500102930617:ios:3b1ce68f4ffc3e36d27b68</string>
+	<key>DATABASE_URL</key>
+	<string>https://motivation-bot-447e2-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tartan_hacks/Data/constants.dart';
 import 'package:tartan_hacks/CustomWidgets/Events/EventCard.dart';
+import 'package:tartan_hacks/CustomWidgets/Events/EventTemplatePage.dart';
 
 class UpcomingEvents extends StatefulWidget {
   @override
@@ -35,6 +36,16 @@ class _UpcomingEventsState extends State<UpcomingEvents> {
                     eventTime: "5:00 PM",
                     categoryIcon: Icons.home,
                     categoryColor: kRed,
+                    buttonPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => EventTemplatePage(
+                            eventName: "(Certain Event)",
+                          ),
+                        ),
+                      );
+                    },
                   ),
                 ),
                 Padding(
@@ -46,6 +57,16 @@ class _UpcomingEventsState extends State<UpcomingEvents> {
                     eventTime: "5:00 PM",
                     categoryIcon: Icons.directions_run,
                     categoryColor: kGreen,
+                    buttonPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => EventTemplatePage(
+                            eventName: "(Certain Event)",
+                          ),
+                        ),
+                      );
+                    },
                   ),
                 ),
                 Padding(
@@ -57,6 +78,16 @@ class _UpcomingEventsState extends State<UpcomingEvents> {
                     eventTime: "5:00 PM",
                     categoryIcon: Icons.description,
                     categoryColor: kBlue,
+                    buttonPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => EventTemplatePage(
+                            eventName: "(Certain Event)",
+                          ),
+                        ),
+                      );
+                    },
                   ),
                 ),
               ],
