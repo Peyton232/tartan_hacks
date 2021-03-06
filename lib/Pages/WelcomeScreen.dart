@@ -36,6 +36,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: Text("Plasma Looking Background and robot man"),
               ),
             ),
+            Container(),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.0),
               child: UpcomingEvents(),

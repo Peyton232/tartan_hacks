@@ -20,14 +20,14 @@ const kHeaderTextStyle = TextStyle(
 );
 const kEventTitleTextStyle = TextStyle(
   color: kSemiBlack,
-  fontSize: 18.0,
+  fontSize: 16.0,
 );
 
 const kCardCircleDimensions = 40.0;
 
 const kEventNotesTextStyle = TextStyle(
   color: kSemiBlack,
-  fontSize: 14.0,
+  fontSize: 12.0,
 );
 
 const kEventDateTextStyle = TextStyle(
