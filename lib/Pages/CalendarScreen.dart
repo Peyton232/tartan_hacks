@@ -3,7 +3,6 @@ import 'package:tartan_hacks/CustomWidgets/Events/EventCard.dart';
 import 'package:tartan_hacks/Data/constants.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:tartan_hacks/Pages/AddEventPage.dart';
-import 'package:tartan_hacks/CustomWidgets/ViewButton.dart';
 
 class CalendarScreen extends StatefulWidget {
   @override

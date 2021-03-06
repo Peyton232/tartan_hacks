@@ -4,6 +4,7 @@ import 'package:tartan_hacks/Data/constants.dart';
 import 'package:tartan_hacks/CustomWidgets/Reminders/ReminderCard.dart';
 import 'package:tartan_hacks/Data/globals.dart' as globals;
 import 'package:stacked/stacked.dart';
+import 'package:tartan_hacks/Pages/AddReminderPage.dart';
 
 class UpcomingReminders extends StatefulWidget {
   @override
@@ -11,59 +12,77 @@ class UpcomingReminders extends StatefulWidget {
 }
 
 class _UpcomingRemindersState extends State<UpcomingReminders> {
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Container(
-            padding: EdgeInsets.only(
-              top: 25.0,
-              left: 10.0,
-              right: 10.0,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  "Upcoming Events",
-                  style: kHeaderTextStyle,
-                ),
-              ],
-            ),
+    return Column(
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.only(
+            top: 10.0,
           ),
-          Container(
-            child: ListView.builder(
-              physics: ClampingScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: globals.Reminds.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ReminderCard(
-                    reminderName: globals.Reminds[index].reminderName,
-                    reminderNotes: globals.Reminds[index].reminderNotes,
-                    reminderDate: globals.Reminds[index].reminderDate,
-                    reminderTime: globals.Reminds[index].reminderTime,
-                    categoryIcon: globals.Reminds[index].categoryIcon,
-                    categoryColor: globals.Reminds[index].categoryColor,
-                    //setup subpage here
-                    // paragraph: globals.Events[index].paragraph,
-                    // stepsA: globals.Events[index].steps,
-                    // videoKey: globals.Events[index].video,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Expanded(
+                child: Container(
+                  child: Text(
+                    "Upcoming Reminders",
+                    style: kHeaderTextStyle,
                   ),
-                );
-              },
-            ),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AddReminderPage(),
+                    ),
+                  );
+                },
+                child: Icon(Icons.add),
+                style: ButtonStyle(
+                  minimumSize: MaterialStateProperty.all<Size>(
+                    Size(
+                      10,
+                      30,
+                    ),
+                  ),
+                  backgroundColor: MaterialStateProperty.all<Color>(
+                    Colors.deepPurple[300],
+                  ),
+                  elevation: MaterialStateProperty.all(4.0),
+                  overlayColor:
+                      MaterialStateProperty.all<Color>(Colors.grey[300]),
+                ),
+              ),
+            ],
           ),
-          ElevatedButton(
+        ),
+        ListView.builder(
+          physics: ClampingScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: globals.Reminds.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: EdgeInsets.only(
+                bottom: 20.0,
+              ),
+              child: ReminderCard(
+                reminderName: globals.Reminds[index].reminderName,
+                reminderNotes: globals.Reminds[index].reminderNotes,
+                reminderDate: globals.Reminds[index].reminderDate,
+                reminderTime: globals.Reminds[index].reminderTime,
+                categoryIcon: globals.Reminds[index].categoryIcon,
+                categoryColor: globals.Reminds[index].categoryColor,
+              ),
+            );
+          },
+        ),
+        ElevatedButton(
             onPressed: () => setState(() => globals.counter++),
-            child: Text("refresh")
-          ),
-        ],
-      ),
+            child: Text("refresh")),
+      ],
     );
   }
 }
-

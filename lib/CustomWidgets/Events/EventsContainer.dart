@@ -3,6 +3,7 @@ import 'package:tartan_hacks/Data/constants.dart';
 import 'package:tartan_hacks/Data/globals.dart' as globals;
 import 'package:tartan_hacks/CustomWidgets/Events/EventCard.dart';
 import 'package:tartan_hacks/CustomWidgets/Events/EventTemplatePage.dart';
+import 'package:tartan_hacks/Pages/AddEventPage.dart';
 
 class UpcomingEvents extends StatefulWidget {
   @override
@@ -12,55 +13,79 @@ class UpcomingEvents extends StatefulWidget {
 class _UpcomingEventsState extends State<UpcomingEvents> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Container(
-            padding: EdgeInsets.only(
-              top: 25.0,
-              left: 10.0,
-              right: 10.0,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  "Upcoming Events",
-                  style: kHeaderTextStyle,
-                ),
-              ],
-            ),
+    return Column(
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.only(
+            top: 10.0,
           ),
-          Container(
-            child: ListView.builder(
-              physics: ClampingScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: globals.Events.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: EventCard(
-                    eventName: globals.Events[index].eventName,
-                    eventNotes: globals.Events[index].eventNotes,
-                    eventDate: globals.Events[index].eventDate,
-                    eventTime: globals.Events[index].eventTime,
-                    categoryIcon: globals.Events[index].categoryIcon,
-                    categoryColor: globals.Events[index].categoryColor,
-                    //setup subpage here
-                    // paragraph: globals.Events[index].paragraph,
-                    // stepsA: globals.Events[index].steps,
-                    // videoKey: globals.Events[index].video,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Expanded(
+                child: Container(
+                  child: Text(
+                    "Upcoming Events",
+                    style: kHeaderTextStyle,
                   ),
-                );
-              },
-            ),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AddEventPage(),
+                    ),
+                  );
+                },
+                child: Icon(Icons.add),
+                style: ButtonStyle(
+                  minimumSize: MaterialStateProperty.all<Size>(
+                    Size(
+                      10,
+                      30,
+                    ),
+                  ),
+                  backgroundColor: MaterialStateProperty.all<Color>(
+                    Colors.deepPurple[300],
+                  ),
+                  elevation: MaterialStateProperty.all(4.0),
+                  overlayColor:
+                      MaterialStateProperty.all<Color>(Colors.grey[300]),
+                ),
+              ),
+            ],
           ),
-          ElevatedButton(
-              onPressed: () => setState(() => globals.counter++),
-              child: Text("refresh")
-          ),
-        ],
-      ),
+        ),
+        ListView.builder(
+          physics: ClampingScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: globals.Events.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: EdgeInsets.only(
+                bottom: 20.0,
+              ),
+              child: EventCard(
+                eventName: globals.Events[index].eventName,
+                eventNotes: globals.Events[index].eventNotes,
+                eventDate: globals.Events[index].eventDate,
+                eventTime: globals.Events[index].eventTime,
+                categoryIcon: globals.Events[index].categoryIcon,
+                categoryColor: globals.Events[index].categoryColor,
+                //setup subpage here
+                // paragraph: globals.Events[index].paragraph,
+                // stepsA: globals.Events[index].steps,
+                // videoKey: globals.Events[index].video,
+              ),
+            );
+          },
+        ),
+        ElevatedButton(
+            onPressed: () => setState(() => globals.counter++),
+            child: Text("refresh")),
+      ],
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tartan_hacks/CustomWidgets/Categories/CategoryTemplatePage.dart';
 import 'package:tartan_hacks/Data/constants.dart';
 import 'package:tartan_hacks/CustomWidgets/Categories/CategoryCard.dart';
+import 'package:tartan_hacks/Pages/AddCategoryPage.dart';
 
 class CategoriesContainer extends StatefulWidget {
   @override
@@ -20,9 +21,43 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
             padding: EdgeInsets.only(
               left: 30.0,
             ),
-            child: Text(
-              "Categories",
-              style: kHeaderTextStyle,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    "Categories",
+                    style: kHeaderTextStyle,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: 30.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AddCategoryPage(),
+                        ),
+                      );
+                    },
+                    child: Icon(Icons.add),
+                    style: ButtonStyle(
+                      minimumSize: MaterialStateProperty.all<Size>(
+                        Size(
+                          10,
+                          30,
+                        ),
+                      ),
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        Colors.deepPurple[300],
+                      ),
+                      elevation: MaterialStateProperty.all(4.0),
+                      overlayColor:
+                          MaterialStateProperty.all<Color>(Colors.grey[300]),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           SingleChildScrollView(
