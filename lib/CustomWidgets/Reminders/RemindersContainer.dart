@@ -3,6 +3,7 @@ import 'package:tartan_hacks/CustomWidgets/Reminders/ReminderTemplatePage.dart';
 import 'package:tartan_hacks/Data/constants.dart';
 import 'package:tartan_hacks/CustomWidgets/Reminders/ReminderCard.dart';
 import 'package:tartan_hacks/Data/globals.dart' as globals;
+import 'package:stacked/stacked.dart';
 
 class UpcomingReminders extends StatefulWidget {
   @override
@@ -10,6 +11,7 @@ class UpcomingReminders extends StatefulWidget {
 }
 
 class _UpcomingRemindersState extends State<UpcomingReminders> {
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,7 +37,7 @@ class _UpcomingRemindersState extends State<UpcomingReminders> {
             child: ListView.builder(
               physics: ClampingScrollPhysics(),
               shrinkWrap: true,
-              itemCount: globals.Events.length,
+              itemCount: globals.Reminds.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -55,8 +57,13 @@ class _UpcomingRemindersState extends State<UpcomingReminders> {
               },
             ),
           ),
+          ElevatedButton(
+            onPressed: () => setState(() => globals.counter++),
+            child: Text("refresh")
+          ),
         ],
       ),
     );
   }
 }
+

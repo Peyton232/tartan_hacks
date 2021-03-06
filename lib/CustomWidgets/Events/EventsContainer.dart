@@ -55,6 +55,10 @@ class _UpcomingEventsState extends State<UpcomingEvents> {
               },
             ),
           ),
+          ElevatedButton(
+              onPressed: () => setState(() => globals.counter++),
+              child: Text("refresh")
+          ),
         ],
       ),
     );
