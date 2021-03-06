@@ -38,6 +38,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             UpcomingEvents(),
             UpcomingReminders(),
             CategoriesContainer(),
+            ElevatedButton(
+              onPressed: () => {
+                sendData("example data"),
+              },
+            ),
           ],
         ),
       ),
