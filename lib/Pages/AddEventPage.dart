@@ -44,7 +44,6 @@ class _AddEventPage extends State<AddEventPage> {
   // Note: This is a GlobalKey<FormState>,
   // not a GlobalKey<MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -192,8 +191,4 @@ class MyCustomFormState extends State<MyCustomForm> {
     );
   }
 }
-
-
-//helper functions
-
 
