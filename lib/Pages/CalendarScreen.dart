@@ -10,8 +10,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Today"),
+      body: Container(
+        child: Text("Hello"),
       ),
     );
   }
