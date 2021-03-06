@@ -5,6 +5,8 @@ import 'package:tartan_hacks/CustomWidgets/Reminders/RemindersContainer.dart';
 import 'package:tartan_hacks/Data/constants.dart';
 import 'package:tartan_hacks/CustomWidgets/Reminders/ReminderCard.dart';
 import '../database/database.dart';
+import 'AddEventPage.dart';
+import 'AddReminderPage.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -35,7 +37,35 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: Text("Plasma Looking Background and robot man"),
               ),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AddEventPage(),
+                  ),
+                );
+              },
+              child: Text("Add Events"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.purple, // background
+              ),
+            ),
             UpcomingEvents(),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AddReminderPage(),
+                  ),
+                );
+              },
+              child: Text("Add Reminders"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.purple, // background
+              ),
+            ),
             UpcomingReminders(),
             CategoriesContainer(),
             ElevatedButton(
@@ -43,6 +73,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 //sendData("example data 2 electric boogaloo"),
                  readData(),
               },
+              child: Text("Read database"),
             ),
           ],
         ),

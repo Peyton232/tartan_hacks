@@ -3,9 +3,20 @@ import 'package:tartan_hacks/Data/constants.dart';
 
 class EventTemplatePage extends StatefulWidget {
   final String eventName;
+  final String eventNotes;
+  final String eventDate;
+  final String eventTime;
+  final IconData categoryIcon;
+  final Color categoryColor;
 
   EventTemplatePage({
     @required this.eventName,
+    @required this.eventNotes,
+    @required this.eventDate,
+    @required this.eventTime,
+    @required this.categoryIcon,
+    @required this.categoryColor,
+
   });
 
   @override
