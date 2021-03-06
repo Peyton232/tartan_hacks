@@ -249,22 +249,61 @@ class _CalendarScreenState extends State<CalendarScreen>
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
-        ViewButton(
-          buttonLabel: "Monthly View",
-          buttonPressed: () {
-            _calendarController.setCalendarFormat(CalendarFormat.month);
+        ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor:
+                MaterialStateProperty.all<Color>(Colors.deepPurple[200]),
+            elevation: MaterialStateProperty.all(4.0),
+            overlayColor: MaterialStateProperty.all<Color>(Colors.grey[300]),
+          ),
+          child: Text(
+            "Monthly View",
+            style: TextStyle(
+              color: kSemiBlack,
+            ),
+          ),
+          onPressed: () {
+            setState(() {
+              _calendarController.setCalendarFormat(CalendarFormat.month);
+            });
           },
         ),
-        ViewButton(
-          buttonLabel: "2-Week View",
-          buttonPressed: () {
-            _calendarController.setCalendarFormat(CalendarFormat.twoWeeks);
+        ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor:
+                MaterialStateProperty.all<Color>(Colors.deepPurple[200]),
+            elevation: MaterialStateProperty.all(4.0),
+            overlayColor: MaterialStateProperty.all<Color>(Colors.grey[300]),
+          ),
+          child: Text(
+            "2-Week View",
+            style: TextStyle(
+              color: kSemiBlack,
+            ),
+          ),
+          onPressed: () {
+            setState(() {
+              _calendarController.setCalendarFormat(CalendarFormat.twoWeeks);
+            });
           },
         ),
-        ViewButton(
-          buttonLabel: "Weekly View",
-          buttonPressed: () {
-            _calendarController.setCalendarFormat(CalendarFormat.week);
+        ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor:
+                MaterialStateProperty.all<Color>(Colors.deepPurple[200]),
+            elevation: MaterialStateProperty.all(4.0),
+            overlayColor: MaterialStateProperty.all<Color>(Colors.grey[300]),
+          ),
+          child: Text(
+            "Weekly View",
+            style: TextStyle(
+              color: kSemiBlack,
+            ),
+          ),
+          onPressed: () {
+            setState(() {
+              _calendarController.setCalendarFormat(CalendarFormat.week);
+            });
           },
         ),
       ],
