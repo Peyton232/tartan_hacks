@@ -84,20 +84,74 @@ class _UpcomingEventsState extends State<UpcomingEvents> {
                 categoryIcon: globals.Events[index].categoryIcon,
                 categoryColor: globals.Events[index].categoryColor,
                 buttonPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => EventTemplatePage(
-                        //Navigate to subpage
-                        eventName: globals.Events[index].eventName,
-                        eventNotes: globals.Events[index].eventNotes,
-                        eventDate: globals.Events[index].eventDate,
-                        eventTime: globals.Events[index].eventTime,
-                        categoryIcon: globals.Events[index].categoryIcon,
-                        categoryColor: globals.Events[index].categoryColor,
-                      ),
-                    ),
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        title: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text(
+                              globals.Events[index].eventName,
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(5.0),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: globals.Events[index].categoryColor,
+                              ),
+                              child: Icon(
+                                globals.Events[index].categoryIcon,
+                                color: kOffWhite,
+                              ),
+                            ),
+                          ],
+                        ),
+                        content: SingleChildScrollView(
+                          child: ListBody(
+                            children: <Widget>[
+                              Text(
+                                "Notes: ${globals.Events[index].eventNotes}",
+                                style: TextStyle(fontSize: 18.0),
+                              ),
+                              SizedBox(
+                                height: 5.0,
+                              ),
+                              Text(
+                                "Date: ${globals.Events[index].eventDate}",
+                                style: TextStyle(fontSize: 18.0),
+                              ),
+                              SizedBox(
+                                height: 5.0,
+                              ),
+                              Text(
+                                "Time: ${globals.Events[index].eventTime}",
+                                style: TextStyle(fontSize: 18.0),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
                   );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => EventTemplatePage(
+                  //       //Navigate to subpage
+                  //       eventName: globals.Events[index].eventName,
+                  //       eventNotes: globals.Events[index].eventNotes,
+                  //       eventDate: globals.Events[index].eventDate,
+                  //       eventTime: globals.Events[index].eventTime,
+                  //       categoryIcon: globals.Events[index].categoryIcon,
+                  //       categoryColor: globals.Events[index].categoryColor,
+                  //     ),
+                  //   ),
+                  // );
                 },
                 //setup subpage here
                 // paragraph: globals.Events[index].paragraph,

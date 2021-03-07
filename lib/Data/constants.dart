@@ -11,7 +11,7 @@ const kSemiBlack = Color(0xff121212);
 const kRed = Color(0xffCE3D57);
 const kGreen = Color(0xff31A16C);
 const kBlue = Color(0xff379CF9);
-const kYellow = Color(0xffFFD74B);
+const kYellow = Color(0xffEFC311);
 //TODO: Change color of Yellow
 
 const kHeaderTextStyle = TextStyle(
@@ -20,7 +20,7 @@ const kHeaderTextStyle = TextStyle(
 );
 const kEventTitleTextStyle = TextStyle(
   color: kSemiBlack,
-  fontSize: 16.0,
+  fontSize: 18.0,
 );
 
 const kCardCircleDimensions = 40.0;

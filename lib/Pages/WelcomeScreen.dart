@@ -6,8 +6,6 @@ import 'package:tartan_hacks/CustomWidgets/Reminders/RemindersContainer.dart';
 import 'package:tartan_hacks/Data/constants.dart';
 import 'package:tartan_hacks/CustomWidgets/Reminders/ReminderCard.dart';
 import '../database/database.dart';
-import 'AddEventPage.dart';
-import 'package:particles_flutter/particles_flutter.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -115,13 +113,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       child: UpcomingReminders(),
                     ),
                     CategoriesContainer(),
-                    ElevatedButton(
-                      onPressed: () => {
-                        //sendData("example data 2 electric boogaloo"),
-                        readData(),
-                      },
-                      child: Text("Read database"),
-                    ),
+                    // ElevatedButton(
+                    //   onPressed: () => {
+                    //     //sendData("example data 2 electric boogaloo"),
+                    //     readData(),
+                    //   },
+                    //   child: Text("Read database"),
+                    // ),
                   ],
                 ),
               ),

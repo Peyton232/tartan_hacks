@@ -39,20 +39,6 @@ class _EventCardState extends State<EventCard> {
         ),
       ),
       onPressed: () {
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (context) => EventTemplatePage(
-        //       //Navigate to subpage
-        //       eventName: widget.eventName,
-        //       eventNotes: widget.eventNotes,
-        //       eventDate: widget.eventDate,
-        //       eventTime: widget.eventTime,
-        //       categoryIcon: widget.categoryIcon,
-        //       categoryColor: widget.categoryColor,
-        //     ),
-        //   ),
-        // );
         widget.buttonPressed();
       },
       child: Container(
@@ -74,7 +60,7 @@ class _EventCardState extends State<EventCard> {
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.only(left: 12.0, top: 12.0),
+                padding: EdgeInsets.only(left: 12.0, top: 21.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -82,10 +68,10 @@ class _EventCardState extends State<EventCard> {
                       widget.eventName,
                       style: kEventTitleTextStyle,
                     ),
-                    Text(
-                      "Notes: ${widget.eventNotes}",
-                      style: kEventNotesTextStyle,
-                    ),
+                    // Text(
+                    //   "Notes: ${widget.eventNotes}",
+                    //   style: kEventNotesTextStyle,
+                    // ),
                   ],
                 ),
               ),

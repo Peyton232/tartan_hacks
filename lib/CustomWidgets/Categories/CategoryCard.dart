@@ -55,7 +55,7 @@ class _CategoryCardState extends State<CategoryCard> {
             Center(
               child: Text(
                 "${widget.amountOfItems} Plans",
-                style: TextStyle(fontSize: 14.0, color: Colors.grey[300]),
+                style: TextStyle(fontSize: 14.0, color: kOffWhite),
               ),
             ),
           ],
