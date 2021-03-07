@@ -69,7 +69,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
             });
 
 
-          sleep(Duration(seconds:1));
+          sleep(Duration(seconds:2));
 
           readData().then((String result) {
             setState(() {
