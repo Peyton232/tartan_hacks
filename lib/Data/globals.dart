@@ -62,3 +62,24 @@ List<ReminderCard> Reminds = [
     categoryColor: kRed,
   ),
 ];
+
+List<CategoryCard> Categories = [
+  CategoryCard(
+    categoryName: "School Events",
+    amountOfItems: 3,
+    categoryIcon: Icons.free_breakfast,
+    categoryColor: kRed,
+  ),
+  CategoryCard(
+    categoryName: "School",
+    amountOfItems: 3,
+    categoryIcon: Icons.laptop_mac,
+    categoryColor: kGreen,
+  ),
+  CategoryCard(
+    categoryName: "Chores",
+    amountOfItems: 2,
+    categoryIcon: Icons.home,
+    categoryColor: kBlue,
+  )
+];

@@ -23,18 +23,6 @@ DatabaseReference sendData(String test) {
 }
 
 Future<String> readData() async {
-  // String result;
-  // var db = FirebaseDatabase.instance.reference().child("fromPython");
-  // db.once().then((DataSnapshot snapshot){
-  //   Map<dynamic, dynamic> values = snapshot.value;
-  //   values.forEach((key,values) {
-  //     print(values["message"]);
-  //     result = values["message"].toString();
-  //   });
-  // });
-  // databaseReference.once().then((DataSnapshot snapshot) {
-  //   print('Data : ${snapshot.value}');
-  // });
   String result = (await FirebaseDatabase.instance.reference().child("fromPython/log/message").once()).value;
   print(result);
   //remove to and from python descriptors---------------------------------------------------------------------------------uncomment later
