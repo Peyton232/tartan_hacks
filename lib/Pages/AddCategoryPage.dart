@@ -194,6 +194,7 @@ class _AddCategoryPageState extends State<AddCategoryPage> {
               style: kHeaderTextStyle,
             ),
             //TODO: Add icon selection
+
           ],
         ),
       ),

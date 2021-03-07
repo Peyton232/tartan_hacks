@@ -4,6 +4,7 @@ import 'package:tartan_hacks/Data/constants.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:tartan_hacks/Pages/AddEventPage.dart';
 import 'package:particles_flutter/particles_flutter.dart';
+import '../Data/globals.dart' as globals;
 
 enum CalendarView {
   monthly,
@@ -18,7 +19,7 @@ class CalendarScreen extends StatefulWidget {
 
 class _CalendarScreenState extends State<CalendarScreen>
     with TickerProviderStateMixin {
-  Map<DateTime, List> _events;
+  Map<DateTime, List> _events = globals.eventDays;
   List _selectedEvents;
   AnimationController _animationController;
   CalendarController _calendarController;
@@ -33,45 +34,8 @@ class _CalendarScreenState extends State<CalendarScreen>
     //_selectedDay.subtract subtract time from current day
     //TODO: This is where events on a certain day is added
     //We can have an event class that takes in the same parameters as the one from Welcome screen
-    _events = {
-      _selectedDay: [
-        'Some Events',
-        'Event B7',
-        'Event C7',
-        'Event D7',
-      ],
-      _selectedDay.add(Duration(days: 1)): [
-        'Event A8',
-        'Event B8',
-        'Event C8',
-        'Event D8'
-      ],
-      _selectedDay.add(Duration(days: 7)): [
-        'Event A10',
-        'Event B10',
-        'Event C10'
-      ],
-      _selectedDay.add(Duration(days: 11)): [
-        'Event A11',
-        'Event B11',
-      ],
-      _selectedDay.add(Duration(days: 17)): [
-        'Event A12',
-        'Event B12',
-        'Event C12',
-        'Event D12'
-      ],
-      _selectedDay.add(Duration(days: 22)): [
-        'Event A13',
-        'Event B13',
-      ],
-      _selectedDay.add(Duration(days: 26)): [
-        'Event A14',
-        'Event B14',
-        'Event C14'
-      ],
-    };
-
+    _events = globals.eventDays;
+    var dataVar;
     _selectedEvents = _events[_selectedDay] ?? [];
     _calendarController = CalendarController();
 
@@ -149,6 +113,7 @@ class _CalendarScreenState extends State<CalendarScreen>
 
   // More advanced TableCalendar configuration (using Builders & Styles)
   Widget _buildTableCalendarWithBuilders() {
+
     return TableCalendar(
       locale: "en_US",
       calendarController: _calendarController,
@@ -366,24 +331,35 @@ class _CalendarScreenState extends State<CalendarScreen>
 
   //TODO: This is where the events are shown and can be added from the list
   Widget _buildEventList() {
+    EventCard dataVar= new EventCard();
+    //dataVar = globals.Events[1];
     return ListView(
       children: _selectedEvents
           .map(
             (event) => Container(
                 margin: EdgeInsets.only(top: 15.0, left: 20.0, right: 20.0),
-                child: EventCard(
-                  eventName: event.toString(),
-                  eventDate: "Date",
-                  eventNotes: "Testing event card",
-                  eventTime: "Time",
-                  categoryColor: kRed,
-                  categoryIcon: Icons.laptop_mac,
-                  buttonPressed: () {
-                    print("${event} pressed");
-                  },
-                )),
+                child: new Column(
+                  children: [
+                    dataVar = globals.Events.firstWhere((element) => element.eventName == event.toString(), orElse: () {return null;}),
+                    EventCard(
+                      eventName: event.toString(),
+                      eventDate: dataVar.eventDate,
+                      eventNotes: dataVar.eventNotes,
+                      eventTime: dataVar.eventTime,
+                      categoryColor: dataVar.categoryColor,
+                      categoryIcon: dataVar.categoryIcon,
+                      buttonPressed: () {
+                        print("${event} pressed");
+                      },
+                    )
+                  ],
+                )
+                ),
           )
           .toList(),
     );
   }
 }
+
+
+
