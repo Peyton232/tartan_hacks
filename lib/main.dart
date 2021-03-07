@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'MotieBot',
       theme: ThemeData(
         fontFamily: 'VarelaRound',
-        primaryColor: kDarkPurple,
+        primaryColor: Colors.deepPurple,
         scaffoldBackgroundColor: kOffWhite,
       ),
       initialRoute: "/WelcomeScreen",
