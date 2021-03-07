@@ -46,8 +46,9 @@ class _AddCategoryPageState extends State<AddCategoryPage> {
                   ),
                   child: TextFormField(
                     decoration: InputDecoration(
-                        hintText: 'Enter a Category Name',
-                        border: InputBorder.none),
+                      hintText: 'Enter a Category Name',
+                      border: InputBorder.none,
+                    ),
                     validator: (value) {
                       if (value.isEmpty) {
                         return 'Please enter some text';
