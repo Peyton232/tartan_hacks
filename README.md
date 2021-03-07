@@ -1,16 +1,16 @@
-# tartan_hacks
+# Moti the Motivational Robot
 
-A new Flutter application.
+A mobile application that helps you keep all your plans, events, and reminders in one place. It also connects to a live databse on firebase which allows our app to ocnnect to a python AI on a remote server which will take user responses and then act as a personal assistant to help motivate and remind the user to do their tasks, as well as scheduale different tasks for you.
 
-## Getting Started
+## How to Run
 
-This project is a starting point for a Flutter application.
+Make sure you have the fllutter SDK installed and an IDE like android studio or VScode
 
-A few resources to get you started if this is your first Flutter project:
+run
+flutter pub get
+flutter clean
+flutter run
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+the python script must be live on the remote server, otherwise no response will eb sent back to the user.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
