@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tartan_hacks/CustomWidgets/AnimatedBackground.dart';
 import 'package:tartan_hacks/CustomWidgets/Categories/CategoriesContainer.dart';
 import 'package:tartan_hacks/CustomWidgets/Events/EventsContainer.dart';
 import 'package:tartan_hacks/CustomWidgets/Reminders/RemindersContainer.dart';
@@ -6,8 +7,10 @@ import 'package:tartan_hacks/Data/constants.dart';
 import 'package:tartan_hacks/CustomWidgets/Reminders/ReminderCard.dart';
 import '../database/database.dart';
 import 'AddEventPage.dart';
+import 'package:particles_flutter/particles_flutter.dart';
 import 'AddReminderPage.dart';
 import 'MotiPage.dart';
+
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -16,8 +19,21 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.deepPurple,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.deepPurple,
         onPressed: () {
@@ -29,63 +45,68 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MotiPage(),
+            //TODO: Add animated background
+            Container(
+              decoration: BoxDecoration(
+                  //color: kDarkPurple,
                   ),
-                );
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: kDarkPurple,
+              height: 400,
+              // child: Center(
+              //   child: CircularParticle(
+              //     awayRadius: 80,
+              //     numberOfParticles: 50,
+              //     speedOfParticles: 0.5,
+              //     height: screenHeight,
+              //     width: screenWidth,
+              //     onTapAnimation: true,
+              //     particleColor: Colors.deepPurple[400].withAlpha(150),
+              //     awayAnimationDuration: Duration(milliseconds: 600),
+              //     maxParticleSize: 15,
+              //     isRandSize: true,
+              //     isRandomColor: false, //If we want rainbow colors
+              //     randColorList: [
+              //       Colors.red.withAlpha(210),
+              //       Colors.white.withAlpha(210),
+              //       Colors.yellow.withAlpha(210),
+              //       Colors.green.withAlpha(210),
+              //       Colors.blue.withAlpha(210)
+              //     ],
+              //     awayAnimationCurve: Curves.easeInOutBack,
+              //     enableHover: true,
+              //     hoverColor: Colors.white,
+              //     hoverRadius: 90,
+              //     connectDots: true,
+              //   ),
+              // ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: kOffWhite,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(30.0),
+                  topLeft: Radius.circular(30.0),
                 ),
-                height: 400,
-                child: Center(
-                  child: Text("Plasma Looking Background and robot man"),
-                ),
               ),
-            ),
-
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => AddEventPage(),
+              child: Column(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 30.0),
+                    child: UpcomingEvents(),
                   ),
-                );
-              },
-              child: Text("Add Events"),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.purple, // background
-              ),
-            ),
-            UpcomingEvents(),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => AddReminderPage(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 30.0),
+                    child: UpcomingReminders(),
                   ),
-                );
-              },
-              child: Text("Add Reminders"),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.purple, // background
+                  CategoriesContainer(),
+                  ElevatedButton(
+                    onPressed: () => {
+                      //sendData("example data 2 electric boogaloo"),
+                      readData(),
+                    },
+                    child: Text("Read database"),
+                  ),
+                ],
               ),
-            ),
-            UpcomingReminders(),
-            CategoriesContainer(),
-            ElevatedButton(
-              onPressed: () => {
-                //sendData("example data 2 electric boogaloo"),
-                 readData(),
-              },
-              child: Text("Read database"),
             ),
           ],
         ),

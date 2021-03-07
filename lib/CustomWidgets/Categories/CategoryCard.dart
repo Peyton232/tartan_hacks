@@ -24,10 +24,12 @@ class _CategoryCardState extends State<CategoryCard> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(widget.categoryColor),
-        elevation: MaterialStateProperty.all(4.0),
-        //overlayColor: MaterialStateProperty.all<Color>(Colors.black54),
+      style: ElevatedButton.styleFrom(
+        primary: widget.categoryColor,
+        elevation: 3,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
       ),
       onPressed: () {
         print("Category button pressed");

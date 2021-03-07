@@ -29,10 +29,12 @@ class _EventCardState extends State<EventCard> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(kOffWhite),
-        elevation: MaterialStateProperty.all(4.0),
-        overlayColor: MaterialStateProperty.all<Color>(Colors.grey[300]),
+      style: ElevatedButton.styleFrom(
+        primary: kOffWhite,
+        elevation: 3,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
       ),
       onPressed: () {
         Navigator.push(

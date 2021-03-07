@@ -3,7 +3,13 @@ import 'package:tartan_hacks/CustomWidgets/Events/EventCard.dart';
 import 'package:tartan_hacks/Data/constants.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:tartan_hacks/Pages/AddEventPage.dart';
-import 'package:tartan_hacks/CustomWidgets/ViewButton.dart';
+import 'package:particles_flutter/particles_flutter.dart';
+
+enum CalendarView {
+  monthly,
+  biweekly,
+  weekly,
+}
 
 class CalendarScreen extends StatefulWidget {
   @override
@@ -16,6 +22,7 @@ class _CalendarScreenState extends State<CalendarScreen>
   List _selectedEvents;
   AnimationController _animationController;
   CalendarController _calendarController;
+  CalendarView _selectedView = CalendarView.monthly;
 
   @override
   void initState() {
@@ -102,27 +109,41 @@ class _CalendarScreenState extends State<CalendarScreen>
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: kOffWhite,
+      //extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
+        title: Text("Calendar"),
+        backgroundColor: Colors.deepPurple,
         iconTheme: IconThemeData(
-          color: kSemiBlack,
+          color: kOffWhite,
         ),
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
-          _buildTableCalendarWithBuilders(),
-          const SizedBox(height: 8.0),
-          _buildButtons(),
-          const SizedBox(height: 8.0),
-          Expanded(
-            child: _buildEventList(),
-          ),
-          //TODO: Have ternary thingy to where if there's no events that day, it'll say "No events"
-        ],
-      ),
+      body: Stack(children: <Widget>[
+        Container(
+          decoration: BoxDecoration(
+              //color: kDarkPurple,
+              ),
+          height: 400,
+        ),
+        Column(
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            Container(
+              child: _buildTableCalendarWithBuilders(),
+            ),
+            //const SizedBox(height: 8.0),
+            _buildButtons(),
+            //const SizedBox(height: 8.0),
+            Expanded(
+              child: _buildEventList(),
+            ),
+            //TODO: Have ternary thingy to where if there's no events that day, it'll say "No events"
+          ],
+        ),
+      ]),
     );
   }
 
@@ -249,22 +270,79 @@ class _CalendarScreenState extends State<CalendarScreen>
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
-        ViewButton(
-          buttonLabel: "Monthly View",
-          buttonPressed: () {
-            _calendarController.setCalendarFormat(CalendarFormat.month);
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            primary: _selectedView == CalendarView.monthly
+                ? Colors.deepPurple[300]
+                : Colors.deepPurple[100],
+            elevation: _selectedView == CalendarView.monthly ? 6 : 3,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+          child: Text(
+            "Monthly View",
+            style: TextStyle(
+              color: _selectedView == CalendarView.monthly
+                  ? kSemiBlack
+                  : Colors.grey[600],
+            ),
+          ),
+          onPressed: () {
+            setState(() {
+              _calendarController.setCalendarFormat(CalendarFormat.month);
+              _selectedView = CalendarView.monthly;
+            });
           },
         ),
-        ViewButton(
-          buttonLabel: "2-Week View",
-          buttonPressed: () {
-            _calendarController.setCalendarFormat(CalendarFormat.twoWeeks);
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            primary: _selectedView == CalendarView.biweekly
+                ? Colors.deepPurple[300]
+                : Colors.deepPurple[100],
+            elevation: _selectedView == CalendarView.biweekly ? 6 : 3,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+          child: Text(
+            "2-Week View",
+            style: TextStyle(
+              color: _selectedView == CalendarView.biweekly
+                  ? kSemiBlack
+                  : Colors.grey[600],
+            ),
+          ),
+          onPressed: () {
+            setState(() {
+              _calendarController.setCalendarFormat(CalendarFormat.twoWeeks);
+              _selectedView = CalendarView.biweekly;
+            });
           },
         ),
-        ViewButton(
-          buttonLabel: "Weekly View",
-          buttonPressed: () {
-            _calendarController.setCalendarFormat(CalendarFormat.week);
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            primary: _selectedView == CalendarView.weekly
+                ? Colors.deepPurple[300]
+                : Colors.deepPurple[100],
+            elevation: _selectedView == CalendarView.weekly ? 6 : 3,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+          child: Text(
+            "Weekly View",
+            style: TextStyle(
+              color: _selectedView == CalendarView.weekly
+                  ? kSemiBlack
+                  : Colors.grey[600],
+            ),
+          ),
+          onPressed: () {
+            setState(() {
+              _calendarController.setCalendarFormat(CalendarFormat.week);
+              _selectedView = CalendarView.weekly;
+            });
           },
         ),
       ],

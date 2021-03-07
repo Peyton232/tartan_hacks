@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tartan_hacks/CustomWidgets/Categories/CategoryTemplatePage.dart';
 import 'package:tartan_hacks/Data/constants.dart';
 import 'package:tartan_hacks/CustomWidgets/Categories/CategoryCard.dart';
+import 'package:tartan_hacks/Pages/AddCategoryPage.dart';
 
 class CategoriesContainer extends StatefulWidget {
   @override
@@ -20,9 +21,36 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
             padding: EdgeInsets.only(
               left: 30.0,
             ),
-            child: Text(
-              "Categories",
-              style: kHeaderTextStyle,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    "Categories",
+                    style: kHeaderTextStyle,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: 30.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AddCategoryPage(),
+                        ),
+                      );
+                    },
+                    child: Icon(Icons.add),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.deepPurple[300],
+                      elevation: 3,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           SingleChildScrollView(

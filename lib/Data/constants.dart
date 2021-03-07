@@ -15,19 +15,19 @@ const kYellow = Color(0xffFFD74B);
 //TODO: Change color of Yellow
 
 const kHeaderTextStyle = TextStyle(
-  fontSize: 20.0,
+  fontSize: 23.0,
   fontWeight: FontWeight.bold,
 );
 const kEventTitleTextStyle = TextStyle(
   color: kSemiBlack,
-  fontSize: 18.0,
+  fontSize: 16.0,
 );
 
 const kCardCircleDimensions = 40.0;
 
 const kEventNotesTextStyle = TextStyle(
   color: kSemiBlack,
-  fontSize: 14.0,
+  fontSize: 12.0,
 );
 
 const kEventDateTextStyle = TextStyle(

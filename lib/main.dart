@@ -3,7 +3,6 @@ import 'package:tartan_hacks/Pages/CalendarScreen.dart';
 import 'package:tartan_hacks/Pages/WelcomeScreen.dart';
 import 'package:tartan_hacks/Data/constants.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -16,7 +15,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'MotieBot',
       theme: ThemeData(
-        primaryColor: kDarkPurple,
+        fontFamily: 'VarelaRound',
+        primaryColor: Colors.deepPurple,
         scaffoldBackgroundColor: kOffWhite,
       ),
       initialRoute: "/WelcomeScreen",
