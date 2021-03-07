@@ -18,8 +18,6 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-  bool motiConfused = false;
-
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -70,7 +68,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    motiConfused = !motiConfused;
+                    Navigator.pushNamed(context, "/MotiPage");
                   });
                 },
                 child: Container(
@@ -91,9 +89,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             EdgeInsets.only(top: 50.0, left: 30.0, right: 30.0),
                         padding: EdgeInsets.all(10.0),
                         child: Text(
-                          motiConfused
-                              ? "Hi, I'm Moti, your motivational robot!"
-                              : "I'm not sure what you're trying to say.",
+                          "Hi, I'm Moti, your motivational robot!",
                           style: TextStyle(
                             fontSize: 18.0,
                             color: kSemiBlack,
@@ -102,9 +98,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         ),
                       ),
                       Image.asset(
-                        motiConfused
-                            ? "images/motiHappy.png"
-                            : "images/motiConfused.png",
+                        "images/motiHappy.png",
                         fit: BoxFit.fitHeight,
                       ),
                     ],

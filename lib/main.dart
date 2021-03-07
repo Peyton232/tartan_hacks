@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tartan_hacks/Pages/CalendarScreen.dart';
 import 'package:tartan_hacks/Pages/WelcomeScreen.dart';
 import 'package:tartan_hacks/Data/constants.dart';
+import 'package:tartan_hacks/Pages/MotiPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/WelcomeScreen": (context) => WelcomeScreen(),
         "/CalendarScreen": (context) => CalendarScreen(),
+        "/MotiPage": (context) => MotiPage(),
       },
     );
   }
