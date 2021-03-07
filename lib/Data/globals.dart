@@ -6,13 +6,12 @@ import '../CustomWidgets/Reminders/ReminderCard.dart';
 import '../CustomWidgets/Categories/CategoryCard.dart';
 import 'package:tartan_hacks/Data/constants.dart';
 
-
 int counter = 0;
 
 //hardcoded a few starting ones
 List<EventCard> Events = [
   EventCard(
-    eventName: "Calendar Event Name 1",
+    eventName: "Event Name 1",
     eventNotes: "Calendar Notes",
     eventDate: "March 7",
     eventTime: "5:00 PM",
@@ -20,7 +19,7 @@ List<EventCard> Events = [
     categoryColor: kBlue,
   ),
   EventCard(
-    eventName: "Calendar Event Name 2",
+    eventName: "Event Name 2",
     eventNotes: "Calendar Notes",
     eventDate: "March 6",
     eventTime: "5:00 PM",
@@ -28,7 +27,7 @@ List<EventCard> Events = [
     categoryColor: kGreen,
   ),
   EventCard(
-    eventName: "Calendar Event Name 3",
+    eventName: "Event Name 3",
     eventNotes: "Calendar Notes",
     eventDate: "March 5",
     eventTime: "5:00 PM",
@@ -43,7 +42,7 @@ List<ReminderCard> Reminds = [
     reminderNotes: "Reminder Notes",
     reminderDate: "March 5",
     reminderTime: "10:00 PM",
-    categoryIcon: Icons.check_circle,
+    categoryIcon: Icons.check,
     categoryColor: kRed,
   ),
   ReminderCard(
@@ -51,7 +50,7 @@ List<ReminderCard> Reminds = [
     reminderNotes: "Reminder Notes",
     reminderDate: "March 5",
     reminderTime: "10:00 PM",
-    categoryIcon: Icons.check_circle,
+    categoryIcon: Icons.check,
     categoryColor: kBlue,
   ),
   ReminderCard(
@@ -59,7 +58,7 @@ List<ReminderCard> Reminds = [
     reminderNotes: "Reminder Notes",
     reminderDate: "March 5",
     reminderTime: "10:00 PM",
-    categoryIcon: Icons.check_circle,
+    categoryIcon: Icons.check,
     categoryColor: kRed,
   ),
 ];

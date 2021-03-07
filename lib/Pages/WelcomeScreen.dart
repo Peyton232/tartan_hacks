@@ -48,33 +48,33 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   //color: kDarkPurple,
                   ),
               height: 400,
-              child: Center(
-                child: CircularParticle(
-                  awayRadius: 80,
-                  numberOfParticles: 50,
-                  speedOfParticles: 0.5,
-                  height: screenHeight,
-                  width: screenWidth,
-                  onTapAnimation: true,
-                  particleColor: Colors.deepPurple[400].withAlpha(150),
-                  awayAnimationDuration: Duration(milliseconds: 600),
-                  maxParticleSize: 15,
-                  isRandSize: true,
-                  isRandomColor: false, //If we want rainbow colors
-                  randColorList: [
-                    Colors.red.withAlpha(210),
-                    Colors.white.withAlpha(210),
-                    Colors.yellow.withAlpha(210),
-                    Colors.green.withAlpha(210),
-                    Colors.blue.withAlpha(210)
-                  ],
-                  awayAnimationCurve: Curves.easeInOutBack,
-                  enableHover: true,
-                  hoverColor: Colors.white,
-                  hoverRadius: 90,
-                  connectDots: true,
-                ),
-              ),
+              // child: Center(
+              //   child: CircularParticle(
+              //     awayRadius: 80,
+              //     numberOfParticles: 50,
+              //     speedOfParticles: 0.5,
+              //     height: screenHeight,
+              //     width: screenWidth,
+              //     onTapAnimation: true,
+              //     particleColor: Colors.deepPurple[400].withAlpha(150),
+              //     awayAnimationDuration: Duration(milliseconds: 600),
+              //     maxParticleSize: 15,
+              //     isRandSize: true,
+              //     isRandomColor: false, //If we want rainbow colors
+              //     randColorList: [
+              //       Colors.red.withAlpha(210),
+              //       Colors.white.withAlpha(210),
+              //       Colors.yellow.withAlpha(210),
+              //       Colors.green.withAlpha(210),
+              //       Colors.blue.withAlpha(210)
+              //     ],
+              //     awayAnimationCurve: Curves.easeInOutBack,
+              //     enableHover: true,
+              //     hoverColor: Colors.white,
+              //     hoverRadius: 90,
+              //     connectDots: true,
+              //   ),
+              // ),
             ),
             Container(
               decoration: BoxDecoration(

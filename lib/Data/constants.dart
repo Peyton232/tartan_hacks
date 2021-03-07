@@ -15,7 +15,7 @@ const kYellow = Color(0xffFFD74B);
 //TODO: Change color of Yellow
 
 const kHeaderTextStyle = TextStyle(
-  fontSize: 20.0,
+  fontSize: 23.0,
   fontWeight: FontWeight.bold,
 );
 const kEventTitleTextStyle = TextStyle(

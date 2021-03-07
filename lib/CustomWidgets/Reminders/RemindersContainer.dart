@@ -41,19 +41,12 @@ class _UpcomingRemindersState extends State<UpcomingReminders> {
                   );
                 },
                 child: Icon(Icons.add),
-                style: ButtonStyle(
-                  minimumSize: MaterialStateProperty.all<Size>(
-                    Size(
-                      10,
-                      30,
-                    ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.deepPurple[300],
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
-                  backgroundColor: MaterialStateProperty.all<Color>(
-                    Colors.deepPurple[300],
-                  ),
-                  elevation: MaterialStateProperty.all(4.0),
-                  overlayColor:
-                      MaterialStateProperty.all<Color>(Colors.grey[300]),
                 ),
               ),
             ],

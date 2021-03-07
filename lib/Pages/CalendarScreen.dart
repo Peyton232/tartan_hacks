@@ -5,6 +5,12 @@ import 'package:table_calendar/table_calendar.dart';
 import 'package:tartan_hacks/Pages/AddEventPage.dart';
 import 'package:particles_flutter/particles_flutter.dart';
 
+enum CalendarView {
+  monthly,
+  biweekly,
+  weekly,
+}
+
 class CalendarScreen extends StatefulWidget {
   @override
   _CalendarScreenState createState() => _CalendarScreenState();
@@ -16,6 +22,7 @@ class _CalendarScreenState extends State<CalendarScreen>
   List _selectedEvents;
   AnimationController _animationController;
   CalendarController _calendarController;
+  CalendarView _selectedView = CalendarView.monthly;
 
   @override
   void initState() {
@@ -120,45 +127,11 @@ class _CalendarScreenState extends State<CalendarScreen>
               //color: kDarkPurple,
               ),
           height: 400,
-          // child: Center(
-          //   child: CircularParticle(
-          //     awayRadius: 80,
-          //     numberOfParticles: 50,
-          //     speedOfParticles: 1,
-          //     height: screenHeight,
-          //     width: screenWidth,
-          //     onTapAnimation: true,
-          //     particleColor: Colors.white.withAlpha(150),
-          //     awayAnimationDuration: Duration(milliseconds: 600),
-          //     maxParticleSize: 8,
-          //     isRandSize: true,
-          //     isRandomColor: false, //If we want rainbow colors
-          //     randColorList: [
-          //       Colors.red.withAlpha(210),
-          //       Colors.white.withAlpha(210),
-          //       Colors.yellow.withAlpha(210),
-          //       Colors.green.withAlpha(210),
-          //       Colors.blue.withAlpha(210)
-          //     ],
-          //     awayAnimationCurve: Curves.easeInOutBack,
-          //     enableHover: true,
-          //     hoverColor: Colors.white,
-          //     hoverRadius: 90,
-          //     connectDots: false,
-          //   ),
-          // ),
         ),
         Column(
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             Container(
-              // decoration: BoxDecoration(
-              //   //color: Colors.deepPurple,
-              //   borderRadius: BorderRadius.only(
-              //     topRight: Radius.circular(30.0),
-              //     topLeft: Radius.circular(30.0),
-              //   ),
-              // ),
               child: _buildTableCalendarWithBuilders(),
             ),
             //const SizedBox(height: 8.0),
@@ -298,59 +271,77 @@ class _CalendarScreenState extends State<CalendarScreen>
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         ElevatedButton(
-          style: ButtonStyle(
-            backgroundColor:
-                MaterialStateProperty.all<Color>(Colors.deepPurple[200]),
-            elevation: MaterialStateProperty.all(4.0),
-            overlayColor: MaterialStateProperty.all<Color>(Colors.grey[300]),
+          style: ElevatedButton.styleFrom(
+            primary: _selectedView == CalendarView.monthly
+                ? Colors.deepPurple[300]
+                : Colors.deepPurple[100],
+            elevation: _selectedView == CalendarView.monthly ? 6 : 3,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
           ),
           child: Text(
             "Monthly View",
             style: TextStyle(
-              color: kSemiBlack,
+              color: _selectedView == CalendarView.monthly
+                  ? kSemiBlack
+                  : Colors.grey[600],
             ),
           ),
           onPressed: () {
             setState(() {
               _calendarController.setCalendarFormat(CalendarFormat.month);
+              _selectedView = CalendarView.monthly;
             });
           },
         ),
         ElevatedButton(
-          style: ButtonStyle(
-            backgroundColor:
-                MaterialStateProperty.all<Color>(Colors.deepPurple[200]),
-            elevation: MaterialStateProperty.all(4.0),
-            overlayColor: MaterialStateProperty.all<Color>(Colors.grey[300]),
+          style: ElevatedButton.styleFrom(
+            primary: _selectedView == CalendarView.biweekly
+                ? Colors.deepPurple[300]
+                : Colors.deepPurple[100],
+            elevation: _selectedView == CalendarView.biweekly ? 6 : 3,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
           ),
           child: Text(
             "2-Week View",
             style: TextStyle(
-              color: kSemiBlack,
+              color: _selectedView == CalendarView.biweekly
+                  ? kSemiBlack
+                  : Colors.grey[600],
             ),
           ),
           onPressed: () {
             setState(() {
               _calendarController.setCalendarFormat(CalendarFormat.twoWeeks);
+              _selectedView = CalendarView.biweekly;
             });
           },
         ),
         ElevatedButton(
-          style: ButtonStyle(
-            backgroundColor:
-                MaterialStateProperty.all<Color>(Colors.deepPurple[200]),
-            elevation: MaterialStateProperty.all(4.0),
-            overlayColor: MaterialStateProperty.all<Color>(Colors.grey[300]),
+          style: ElevatedButton.styleFrom(
+            primary: _selectedView == CalendarView.weekly
+                ? Colors.deepPurple[300]
+                : Colors.deepPurple[100],
+            elevation: _selectedView == CalendarView.weekly ? 6 : 3,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
           ),
           child: Text(
             "Weekly View",
             style: TextStyle(
-              color: kSemiBlack,
+              color: _selectedView == CalendarView.weekly
+                  ? kSemiBlack
+                  : Colors.grey[600],
             ),
           ),
           onPressed: () {
             setState(() {
               _calendarController.setCalendarFormat(CalendarFormat.week);
+              _selectedView = CalendarView.weekly;
             });
           },
         ),
