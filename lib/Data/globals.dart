@@ -65,9 +65,9 @@ List<CategoryCard> Categories = [
 ];
 
 Map<DateTime, List<String>> eventDays = {
-  selectedDay.subtract(Duration(days: 2)): ["Event name 3"],
-  selectedDay.subtract(Duration(days: 1)): ["Event name 2"],
-  selectedDay: ["Event Name 1"],
+  selectedDay.subtract(Duration(days: 2)): [],
+  selectedDay.subtract(Duration(days: 1)): [],
+  selectedDay: [],
   selectedDay.add(Duration(days: 1)): [],
   selectedDay.add(Duration(days: 2)): [],
   selectedDay.add(Duration(days: 3)): [],
