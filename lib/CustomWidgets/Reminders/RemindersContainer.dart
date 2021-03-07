@@ -26,10 +26,25 @@ class _UpcomingRemindersState extends State<UpcomingReminders> {
               Expanded(
                 child: Container(
                   child: Text(
-                    "Upcoming Reminders",
+                    "Your Reminders",
                     style: kHeaderTextStyle,
                   ),
                 ),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(10, 30),
+                  primary: Colors.deepPurple[300],
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                onPressed: () => setState(() => globals.counter++),
+                child: Icon(Icons.cached),
+              ),
+              SizedBox(
+                width: 5.0,
               ),
               ElevatedButton(
                 onPressed: () {
@@ -42,6 +57,7 @@ class _UpcomingRemindersState extends State<UpcomingReminders> {
                 },
                 child: Icon(Icons.add),
                 style: ElevatedButton.styleFrom(
+                  minimumSize: Size(10, 30),
                   primary: Colors.deepPurple[300],
                   elevation: 3,
                   shape: RoundedRectangleBorder(
@@ -72,9 +88,6 @@ class _UpcomingRemindersState extends State<UpcomingReminders> {
             );
           },
         ),
-        ElevatedButton(
-            onPressed: () => setState(() => globals.counter++),
-            child: Text("refresh")),
       ],
     );
   }

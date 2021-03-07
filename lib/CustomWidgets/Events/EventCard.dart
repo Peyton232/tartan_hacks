@@ -26,6 +26,8 @@ class EventCard extends StatefulWidget {
 }
 
 class _EventCardState extends State<EventCard> {
+  bool selected = false;
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -37,21 +39,21 @@ class _EventCardState extends State<EventCard> {
         ),
       ),
       onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => EventTemplatePage(
-              //Navigate to subpage
-              eventName: widget.eventName,
-              eventNotes: widget.eventNotes,
-              eventDate: widget.eventDate,
-              eventTime: widget.eventTime,
-              categoryIcon: widget.categoryIcon,
-              categoryColor: widget.categoryColor,
-            ),
-          ),
-        );
-        //widget.buttonPressed();
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (context) => EventTemplatePage(
+        //       //Navigate to subpage
+        //       eventName: widget.eventName,
+        //       eventNotes: widget.eventNotes,
+        //       eventDate: widget.eventDate,
+        //       eventTime: widget.eventTime,
+        //       categoryIcon: widget.categoryIcon,
+        //       categoryColor: widget.categoryColor,
+        //     ),
+        //   ),
+        // );
+        widget.buttonPressed();
       },
       child: Container(
         width: 330,

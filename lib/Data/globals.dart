@@ -9,28 +9,29 @@ import 'package:tartan_hacks/Data/constants.dart';
 int counter = 0;
 
 //hardcoded a few starting ones
+//TODO; Show top 5
 List<EventCard> Events = [
   EventCard(
-    eventName: "Event Name 1",
-    eventNotes: "Calendar Notes",
-    eventDate: "March 7",
-    eventTime: "5:00 PM",
+    eventName: "TartanHacks Day 1",
+    eventNotes: "Brainstorm",
+    eventDate: "March 5",
+    eventTime: "12:00 PM",
     categoryIcon: Icons.description,
     categoryColor: kBlue,
   ),
   EventCard(
-    eventName: "Event Name 2",
-    eventNotes: "Calendar Notes",
+    eventName: "TartanHacks Day 2",
+    eventNotes: "Ui and Database",
     eventDate: "March 6",
-    eventTime: "5:00 PM",
+    eventTime: "11:00 AM",
     categoryIcon: Icons.directions_run,
     categoryColor: kGreen,
   ),
   EventCard(
-    eventName: "Event Name 3",
-    eventNotes: "Calendar Notes",
-    eventDate: "March 5",
-    eventTime: "5:00 PM",
+    eventName: "TartanHacks Day 3",
+    eventNotes: "Finalize and Video",
+    eventDate: "March 7",
+    eventTime: "8:00 AM",
     categoryIcon: Icons.home,
     categoryColor: kRed,
   )

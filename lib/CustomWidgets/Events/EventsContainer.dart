@@ -25,10 +25,25 @@ class _UpcomingEventsState extends State<UpcomingEvents> {
               Expanded(
                 child: Container(
                   child: Text(
-                    "Upcoming Events",
+                    "Your Events",
                     style: kHeaderTextStyle,
                   ),
                 ),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(10, 30),
+                  primary: Colors.deepPurple[300],
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                onPressed: () => setState(() => globals.counter++),
+                child: Icon(Icons.cached),
+              ),
+              SizedBox(
+                width: 5.0,
               ),
               ElevatedButton(
                 onPressed: () {
@@ -41,6 +56,7 @@ class _UpcomingEventsState extends State<UpcomingEvents> {
                 },
                 child: Icon(Icons.add),
                 style: ElevatedButton.styleFrom(
+                  minimumSize: Size(10, 30),
                   primary: Colors.deepPurple[300],
                   elevation: 3,
                   shape: RoundedRectangleBorder(
@@ -67,6 +83,22 @@ class _UpcomingEventsState extends State<UpcomingEvents> {
                 eventTime: globals.Events[index].eventTime,
                 categoryIcon: globals.Events[index].categoryIcon,
                 categoryColor: globals.Events[index].categoryColor,
+                buttonPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EventTemplatePage(
+                        //Navigate to subpage
+                        eventName: globals.Events[index].eventName,
+                        eventNotes: globals.Events[index].eventNotes,
+                        eventDate: globals.Events[index].eventDate,
+                        eventTime: globals.Events[index].eventTime,
+                        categoryIcon: globals.Events[index].categoryIcon,
+                        categoryColor: globals.Events[index].categoryColor,
+                      ),
+                    ),
+                  );
+                },
                 //setup subpage here
                 // paragraph: globals.Events[index].paragraph,
                 // stepsA: globals.Events[index].steps,
@@ -75,9 +107,17 @@ class _UpcomingEventsState extends State<UpcomingEvents> {
             );
           },
         ),
-        ElevatedButton(
-            onPressed: () => setState(() => globals.counter++),
-            child: Text("refresh")),
+        // ElevatedButton(
+        //   style: ElevatedButton.styleFrom(
+        //     primary: Colors.deepPurple[300],
+        //     elevation: 3,
+        //     shape: RoundedRectangleBorder(
+        //       borderRadius: BorderRadius.circular(20.0),
+        //     ),
+        //   ),
+        //   onPressed: () => setState(() => globals.counter++),
+        //   child: Icon(Icons.cached),
+        // ),
       ],
     );
   }

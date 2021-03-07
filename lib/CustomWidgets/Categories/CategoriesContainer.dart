@@ -42,6 +42,7 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                     },
                     child: Icon(Icons.add),
                     style: ElevatedButton.styleFrom(
+                      minimumSize: Size(10, 30),
                       primary: Colors.deepPurple[300],
                       elevation: 3,
                       shape: RoundedRectangleBorder(
