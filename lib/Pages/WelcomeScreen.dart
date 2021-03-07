@@ -8,6 +8,9 @@ import 'package:tartan_hacks/CustomWidgets/Reminders/ReminderCard.dart';
 import '../database/database.dart';
 import 'AddEventPage.dart';
 import 'package:particles_flutter/particles_flutter.dart';
+import 'AddReminderPage.dart';
+import 'MotiPage.dart';
+
 
 class WelcomeScreen extends StatefulWidget {
   @override
