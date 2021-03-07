@@ -3,6 +3,7 @@ import 'package:tartan_hacks/CustomWidgets/Events/EventCard.dart';
 import 'package:tartan_hacks/Data/constants.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:tartan_hacks/Pages/AddEventPage.dart';
+import 'package:particles_flutter/particles_flutter.dart';
 
 class CalendarScreen extends StatefulWidget {
   @override
@@ -101,27 +102,75 @@ class _CalendarScreenState extends State<CalendarScreen>
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: kOffWhite,
+      //extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
+        title: Text("Calendar"),
+        backgroundColor: Colors.deepPurple,
         iconTheme: IconThemeData(
-          color: kSemiBlack,
+          color: kOffWhite,
         ),
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
-          _buildTableCalendarWithBuilders(),
-          const SizedBox(height: 8.0),
-          _buildButtons(),
-          const SizedBox(height: 8.0),
-          Expanded(
-            child: _buildEventList(),
-          ),
-          //TODO: Have ternary thingy to where if there's no events that day, it'll say "No events"
-        ],
-      ),
+      body: Stack(children: <Widget>[
+        Container(
+          decoration: BoxDecoration(
+              //color: kDarkPurple,
+              ),
+          height: 400,
+          // child: Center(
+          //   child: CircularParticle(
+          //     awayRadius: 80,
+          //     numberOfParticles: 50,
+          //     speedOfParticles: 1,
+          //     height: screenHeight,
+          //     width: screenWidth,
+          //     onTapAnimation: true,
+          //     particleColor: Colors.white.withAlpha(150),
+          //     awayAnimationDuration: Duration(milliseconds: 600),
+          //     maxParticleSize: 8,
+          //     isRandSize: true,
+          //     isRandomColor: false, //If we want rainbow colors
+          //     randColorList: [
+          //       Colors.red.withAlpha(210),
+          //       Colors.white.withAlpha(210),
+          //       Colors.yellow.withAlpha(210),
+          //       Colors.green.withAlpha(210),
+          //       Colors.blue.withAlpha(210)
+          //     ],
+          //     awayAnimationCurve: Curves.easeInOutBack,
+          //     enableHover: true,
+          //     hoverColor: Colors.white,
+          //     hoverRadius: 90,
+          //     connectDots: false,
+          //   ),
+          // ),
+        ),
+        Column(
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            Container(
+              // decoration: BoxDecoration(
+              //   //color: Colors.deepPurple,
+              //   borderRadius: BorderRadius.only(
+              //     topRight: Radius.circular(30.0),
+              //     topLeft: Radius.circular(30.0),
+              //   ),
+              // ),
+              child: _buildTableCalendarWithBuilders(),
+            ),
+            //const SizedBox(height: 8.0),
+            _buildButtons(),
+            //const SizedBox(height: 8.0),
+            Expanded(
+              child: _buildEventList(),
+            ),
+            //TODO: Have ternary thingy to where if there's no events that day, it'll say "No events"
+          ],
+        ),
+      ]),
     );
   }
 

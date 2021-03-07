@@ -30,6 +30,10 @@ dependencies:
   smart_select: ^4.3.2
   stacked: ^1.9.5
   table_calendar: ^2.3.3
+  simple_animations: ^3.0.0
+  supercharged: ^2.0.0
+  pedantic: ^1.11.0
+  particles_flutter: ^0.1.2
 
 
   # The following adds the Cupertino Icons font to your application.
