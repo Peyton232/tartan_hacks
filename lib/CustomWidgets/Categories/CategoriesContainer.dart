@@ -87,7 +87,7 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                       right: 20.0,
                     ),
                     child: CategoryCard(
-                      categoryName: "School Events",
+                      categoryName: "Events",
                       amountOfItems: 3,
                       categoryIcon: Icons.free_breakfast,
                       categoryColor: kRed,

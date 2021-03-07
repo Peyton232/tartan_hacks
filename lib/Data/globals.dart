@@ -17,30 +17,30 @@ List<EventCard> Events = [
 ];
 
 List<ReminderCard> Reminds = [
-  ReminderCard(
-    reminderName: "Feed Cat",
-    reminderNotes: "Don't put too much food",
-    reminderDate: "Today",
-    reminderTime: "12:30 PM",
-    categoryIcon: Icons.push_pin,
-    categoryColor: kBlue,
-  ),
-  ReminderCard(
-    reminderName: "Vacuum Room",
-    reminderNotes: "Charge the battery after",
-    reminderDate: "Today",
-    reminderTime: "3:00 PM",
-    categoryIcon: Icons.push_pin,
-    categoryColor: kBlue,
-  ),
-  ReminderCard(
-    reminderName: "Do 4600 Midterm",
-    reminderNotes: "Go through notes",
-    reminderDate: "Tomorrow",
-    reminderTime: "9:00 AM",
-    categoryIcon: Icons.push_pin,
-    categoryColor: kGreen,
-  ),
+  // ReminderCard(
+  //   reminderName: "Feed Cat",
+  //   reminderNotes: "Don't put too much food",
+  //   reminderDate: "Today",
+  //   reminderTime: "12:30 PM",
+  //   categoryIcon: Icons.push_pin,
+  //   categoryColor: kBlue,
+  // ),
+  // ReminderCard(
+  //   reminderName: "Vacuum Room",
+  //   reminderNotes: "Charge the battery after",
+  //   reminderDate: "Today",
+  //   reminderTime: "3:00 PM",
+  //   categoryIcon: Icons.push_pin,
+  //   categoryColor: kBlue,
+  // ),
+  // ReminderCard(
+  //   reminderName: "Do 4600 Midterm",
+  //   reminderNotes: "Go through notes",
+  //   reminderDate: "Tomorrow",
+  //   reminderTime: "9:00 AM",
+  //   categoryIcon: Icons.push_pin,
+  //   categoryColor: kGreen,
+  // ),
 ];
 
 List<CategoryCard> Categories = [
