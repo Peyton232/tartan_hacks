@@ -189,23 +189,39 @@ class _CalendarScreenState extends State<CalendarScreen>
         selectedDayBuilder: (context, date, _) {
           //When current day is selected
           return Container(
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.grey[600],
+                    blurRadius: 4,
+                    offset: Offset(
+                      2,
+                      3,
+                    ))
+              ],
+              borderRadius: BorderRadius.circular(15.0),
+              color: Colors.purple[700],
+            ),
             margin: const EdgeInsets.all(4.0),
-            padding: const EdgeInsets.only(top: 5.0, left: 6.0),
-            color: kDarkPurple,
+            padding: const EdgeInsets.only(top: 8.0, left: 8.0),
             width: 100,
             height: 100,
             child: Text(
               '${date.day}',
-              style: TextStyle().copyWith(fontSize: 16.0),
+              style: TextStyle().copyWith(fontSize: 18.0, color: kOffWhite),
             ),
           );
         },
         //When current day is not selected
         todayDayBuilder: (context, date, _) {
           return Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.deepPurple[200], width: 3),
+              borderRadius: BorderRadius.circular(15.0),
+              color: Colors.deepPurple[100],
+            ),
             margin: const EdgeInsets.all(4.0),
             padding: const EdgeInsets.only(top: 5.0, left: 6.0),
-            color: kLightPurple,
             width: 100,
             height: 100,
             child: Text(
@@ -226,7 +242,6 @@ class _CalendarScreenState extends State<CalendarScreen>
               ),
             );
           }
-
           return children;
         },
       ),
@@ -242,17 +257,17 @@ class _CalendarScreenState extends State<CalendarScreen>
   //TODO: Change the color of the app
   Widget _buildEventsMarker(DateTime date, List events) {
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 100),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: _calendarController.isSelected(date)
-            ? kSemiLightPurple
+            ? Colors.purple[300]
             : _calendarController.isToday(date)
-                ? Colors.deepPurple[300]
+                ? Colors.purple[900]
                 : Colors.deepPurple[100],
       ),
-      width: 16.0,
-      height: 16.0,
+      width: 18.0,
+      height: 18.0,
       child: Center(
         child: Text(
           '${events.length}',
