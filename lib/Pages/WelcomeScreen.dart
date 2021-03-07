@@ -4,6 +4,7 @@ import 'package:tartan_hacks/CustomWidgets/Categories/CategoriesContainer.dart';
 import 'package:tartan_hacks/CustomWidgets/Events/EventsContainer.dart';
 import 'package:tartan_hacks/CustomWidgets/Reminders/RemindersContainer.dart';
 import 'package:tartan_hacks/Data/constants.dart';
+import 'package:particles_flutter/particles_flutter.dart';
 import 'package:tartan_hacks/CustomWidgets/Reminders/ReminderCard.dart';
 import '../database/database.dart';
 
@@ -13,6 +14,8 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  bool motiConfused = false;
+
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -28,70 +31,80 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       ),
       body: SingleChildScrollView(
         child: Stack(children: <Widget>[
-          // Container(
-          //   child: Center(
-          //     child: CircularParticle(
-          //       awayRadius: 80,
-          //       numberOfParticles: 50,
-          //       speedOfParticles: 0.5,
-          //       height: screenHeight,
-          //       width: screenWidth,
-          //       onTapAnimation: true,
-          //       particleColor: Colors.deepPurple[400].withAlpha(150),
-          //       awayAnimationDuration: Duration(milliseconds: 600),
-          //       maxParticleSize: 15,
-          //       isRandSize: true,
-          //       isRandomColor: false, //If we want rainbow colors
-          //       randColorList: [
-          //         Colors.red.withAlpha(210),
-          //         Colors.white.withAlpha(210),
-          //         Colors.yellow.withAlpha(210),
-          //         Colors.green.withAlpha(210),
-          //         Colors.blue.withAlpha(210)
-          //       ],
-          //       awayAnimationCurve: Curves.easeInOutBack,
-          //       enableHover: true,
-          //       hoverColor: Colors.white,
-          //       hoverRadius: 90,
-          //       connectDots: true,
-          //     ),
-          //   ),
-          // ),
+          Container(
+            child: Center(
+              child: CircularParticle(
+                awayRadius: 80,
+                numberOfParticles: 50,
+                speedOfParticles: 0.5,
+                height: screenHeight,
+                width: screenWidth,
+                onTapAnimation: true,
+                particleColor: Colors.deepPurple[400].withAlpha(150),
+                awayAnimationDuration: Duration(milliseconds: 600),
+                maxParticleSize: 15,
+                isRandSize: true,
+                isRandomColor: false, //If we want rainbow colors
+                randColorList: [
+                  Colors.red.withAlpha(210),
+                  Colors.white.withAlpha(210),
+                  Colors.yellow.withAlpha(210),
+                  Colors.green.withAlpha(210),
+                  Colors.blue.withAlpha(210)
+                ],
+                awayAnimationCurve: Curves.easeInOutBack,
+                enableHover: true,
+                hoverColor: Colors.white,
+                hoverRadius: 90,
+                connectDots: true,
+              ),
+            ),
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              //TODO: Add animated background
-              Container(
-                height: 400,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    Container(
-                      decoration: BoxDecoration(
-                        color: kOffWhite,
-                        borderRadius: BorderRadius.circular(30.0),
-                        border: Border.all(
-                          color: kSemiBlack,
-                          width: 3.0,
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    motiConfused = !motiConfused;
+                  });
+                },
+                child: Container(
+                  //height: 400,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      Container(
+                        decoration: BoxDecoration(
+                          color: kOffWhite,
+                          borderRadius: BorderRadius.circular(30.0),
+                          border: Border.all(
+                            color: kSemiBlack,
+                            width: 3.0,
+                          ),
+                        ),
+                        margin:
+                            EdgeInsets.only(top: 50.0, left: 30.0, right: 30.0),
+                        padding: EdgeInsets.all(10.0),
+                        child: Text(
+                          motiConfused
+                              ? "Hi, I'm Moti, your motivational robot!"
+                              : "I'm not sure what you're trying to say.",
+                          style: TextStyle(
+                            fontSize: 18.0,
+                            color: kSemiBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
                       ),
-                      margin: EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 30.0),
-                      padding: EdgeInsets.all(10.0),
-                      child: Text(
-                        "Hi, I'm Moti, your motivational robot!",
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          color: kSemiBlack,
-                        ),
-                        textAlign: TextAlign.center,
+                      Image.asset(
+                        motiConfused
+                            ? "images/motiHappy.png"
+                            : "images/motiConfused.png",
+                        fit: BoxFit.fitHeight,
                       ),
-                    ),
-                    Image.asset(
-                      "images/sampleRobot.png",
-                      fit: BoxFit.contain,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               Container(
