@@ -9,15 +9,17 @@ class EventCard extends StatefulWidget {
   final String eventTime;
   final IconData categoryIcon;
   final Color categoryColor;
+  final String catName;
   final Function buttonPressed;
 
   EventCard({
-    @required this.eventName,
-    @required this.eventNotes,
-    @required this.eventDate,
-    @required this.eventTime,
-    @required this.categoryIcon,
-    @required this.categoryColor,
+    this.eventName,
+    this.eventNotes,
+    this.eventDate,
+     this.eventTime,
+     this.categoryIcon,
+     this.categoryColor,
+    this.catName,
     this.buttonPressed,
   });
 

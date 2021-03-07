@@ -44,6 +44,7 @@ class _AddEventPage extends State<AddEventPage> {
   // Note: This is a GlobalKey<FormState>,
   // not a GlobalKey<MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -282,6 +283,29 @@ class MyCustomFormState extends State<MyCustomForm> {
                         ));
                         setState(() {});
                       }
+
+                      //test calendar
+                      List<String> oldDay = globals.eventDays[
+                          globals.selectedDay.add(Duration(days: 3))];
+                      int num;
+                      oldDay.add(name);
+                      if (date == "tomorrow") {
+                        num = 1;
+                      } else if (date == "next week"){
+                        num = 7;
+                      } else if (date.length == 8){
+                        num = int.parse(date.substring(2,3));
+                        print(date);
+                        print(num);
+                      } else if (date.length == 9){
+                        num = int.parse(date.substring(2,4));
+                      } else {
+                        num = 0;
+                      }
+
+
+                      globals.eventDays[
+                          globals.selectedDay.add(Duration(days: (num - 7)))] = oldDay;
                     },
                     child: Text('Submit'),
                   ),

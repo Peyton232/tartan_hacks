@@ -3,6 +3,9 @@ import 'package:tartan_hacks/CustomWidgets/Categories/CategoryTemplatePage.dart'
 import 'package:tartan_hacks/Data/constants.dart';
 import 'package:tartan_hacks/CustomWidgets/Categories/CategoryCard.dart';
 import 'package:tartan_hacks/Pages/AddCategoryPage.dart';
+import '../Events/EventCard.dart';
+import '../Reminders/ReminderCard.dart';
+import 'package:tartan_hacks/Data/globals.dart' as globals;
 
 class CategoriesContainer extends StatefulWidget {
   @override
@@ -61,6 +64,24 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
               child: Row(
                 children: <Widget>[
                   //TODO: Make this from a list
+
+                  // ListView.builder(
+                  //   itemCount: globals.Categories.length,
+                  //   itemBuilder: (BuildContext context, int index) {
+                  //     return Padding(
+                  //       padding: EdgeInsets.only(
+                  //         right: 20.0,
+                  //       ),
+                  //       child: CategoryCard(
+                  //         categoryName: globals.Categories[index].categoryName,
+                  //         amountOfItems: globals.Categories[index].amountOfItems,
+                  //         categoryIcon: globals.Categories[index].categoryIcon,
+                  //         categoryColor: globals.Categories[index].categoryColor,
+                  //       ),
+                  //     );
+                  //   },
+                  // ),
+
                   Padding(
                     padding: EdgeInsets.only(
                       right: 20.0,
