@@ -47,7 +47,7 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(10, 30),
                       primary: Colors.deepPurple[300],
-                      elevation: 3,
+                      elevation: 0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
@@ -88,7 +88,7 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                     ),
                     child: CategoryCard(
                       categoryName: "Events",
-                      amountOfItems: 3,
+                      amountOfItems: 0,
                       categoryIcon: Icons.free_breakfast,
                       categoryColor: kRed,
                       buttonPressed: () {
@@ -110,7 +110,7 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                     ),
                     child: CategoryCard(
                       categoryName: "School",
-                      amountOfItems: 3,
+                      amountOfItems: 0,
                       categoryIcon: Icons.laptop_mac,
                       categoryColor: kGreen,
                       buttonPressed: () {
@@ -132,7 +132,7 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                     ),
                     child: CategoryCard(
                       categoryName: "Chores",
-                      amountOfItems: 2,
+                      amountOfItems: 0,
                       categoryIcon: Icons.home,
                       categoryColor: kBlue,
                       buttonPressed: () {
@@ -154,7 +154,7 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                     ),
                     child: CategoryCard(
                       categoryName: "Work",
-                      amountOfItems: 2,
+                      amountOfItems: 0,
                       categoryIcon: Icons.directions_car,
                       categoryColor: kYellow,
                       buttonPressed: () {
