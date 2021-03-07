@@ -32,7 +32,6 @@ class _CategoryCardState extends State<CategoryCard> {
         ),
       ),
       onPressed: () {
-        print("Category button pressed");
         widget.buttonPressed();
       },
       child: Container(
