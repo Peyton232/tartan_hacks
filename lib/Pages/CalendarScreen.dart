@@ -35,7 +35,6 @@ class _CalendarScreenState extends State<CalendarScreen>
     //TODO: This is where events on a certain day is added
     //We can have an event class that takes in the same parameters as the one from Welcome screen
     _events = globals.eventDays;
-    var dataVar;
     _selectedEvents = _events[_selectedDay] ?? [];
     _calendarController = CalendarController();
 
@@ -88,8 +87,8 @@ class _CalendarScreenState extends State<CalendarScreen>
       body: Stack(children: <Widget>[
         Container(
           decoration: BoxDecoration(
-              //color: kDarkPurple,
-              ),
+            //color: kDarkPurple,
+          ),
           height: 400,
         ),
         Column(
@@ -228,8 +227,8 @@ class _CalendarScreenState extends State<CalendarScreen>
         color: _calendarController.isSelected(date)
             ? Colors.purple[300]
             : _calendarController.isToday(date)
-                ? Colors.purple[900]
-                : Colors.deepPurple[100],
+            ? Colors.purple[900]
+            : Colors.deepPurple[100],
       ),
       width: 18.0,
       height: 18.0,
@@ -252,7 +251,6 @@ class _CalendarScreenState extends State<CalendarScreen>
       children: <Widget>[
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-            minimumSize: Size(10, 30),
             primary: _selectedView == CalendarView.monthly
                 ? Colors.deepPurple[300]
                 : Colors.deepPurple[100],
@@ -278,7 +276,6 @@ class _CalendarScreenState extends State<CalendarScreen>
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-            minimumSize: Size(10, 30),
             primary: _selectedView == CalendarView.biweekly
                 ? Colors.deepPurple[300]
                 : Colors.deepPurple[100],
@@ -304,7 +301,6 @@ class _CalendarScreenState extends State<CalendarScreen>
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-            minimumSize: Size(10, 30),
             primary: _selectedView == CalendarView.weekly
                 ? Colors.deepPurple[300]
                 : Colors.deepPurple[100],
@@ -340,29 +336,26 @@ class _CalendarScreenState extends State<CalendarScreen>
       children: _selectedEvents
           .map(
             (event) => Container(
-                margin: EdgeInsets.only(top: 15.0, left: 20.0, right: 20.0),
-                child: new Column(
-                  children: [
-                    dataVar = globals.Events.firstWhere((element) => element.eventName == event.toString(), orElse: () {return null;}),
-                    EventCard(
-                      eventName: event.toString(),
-                      eventDate: dataVar.eventDate,
-                      eventNotes: dataVar.eventNotes,
-                      eventTime: dataVar.eventTime,
-                      categoryColor: dataVar.categoryColor,
-                      categoryIcon: dataVar.categoryIcon,
-                      buttonPressed: () {
-                        print("${event} pressed");
-                      },
-                    )
-                  ],
-                )
-                ),
-          )
+            margin: EdgeInsets.only(top: 15.0, left: 20.0, right: 20.0),
+            child: new Column(
+              children: [
+                dataVar = globals.Events.firstWhere((element) => element.eventName == event.toString(), orElse: () {return null;}),
+                // EventCard(
+                //   eventName: event.toString(),
+                //   eventDate: dataVar.eventDate,
+                //   eventNotes: dataVar.eventNotes,
+                //   eventTime: dataVar.eventTime,
+                //   categoryColor: dataVar.categoryColor,
+                //   categoryIcon: dataVar.categoryIcon,
+                //   buttonPressed: () {
+                //     print("${event} pressed");
+                //   },
+                // )
+              ],
+            )
+        ),
+      )
           .toList(),
     );
   }
 }
-
-
-
