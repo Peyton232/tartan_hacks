@@ -306,7 +306,9 @@ class MyCustomFormState extends State<MyCustomForm> {
 
                       globals.eventDays[
                           globals.selectedDay.add(Duration(days: (num - 7)))] = oldDay;
+                      Navigator.pop(context);
                     },
+
                     child: Text('Submit'),
                   ),
                 ),
