@@ -26,10 +26,25 @@ class _UpcomingRemindersState extends State<UpcomingReminders> {
               Expanded(
                 child: Container(
                   child: Text(
-                    "Upcoming Reminders",
+                    "Your Reminders",
                     style: kHeaderTextStyle,
                   ),
                 ),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(10, 30),
+                  primary: Colors.deepPurple[300],
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                onPressed: () => setState(() => globals.counter++),
+                child: Icon(Icons.cached),
+              ),
+              SizedBox(
+                width: 5.0,
               ),
               ElevatedButton(
                 onPressed: () {
@@ -42,6 +57,7 @@ class _UpcomingRemindersState extends State<UpcomingReminders> {
                 },
                 child: Icon(Icons.add),
                 style: ElevatedButton.styleFrom(
+                  minimumSize: Size(10, 30),
                   primary: Colors.deepPurple[300],
                   elevation: 3,
                   shape: RoundedRectangleBorder(
@@ -68,13 +84,68 @@ class _UpcomingRemindersState extends State<UpcomingReminders> {
                 reminderTime: globals.Reminds[index].reminderTime,
                 categoryIcon: globals.Reminds[index].categoryIcon,
                 categoryColor: globals.Reminds[index].categoryColor,
+                buttonPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        title: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text(
+                              globals.Reminds[index].reminderName,
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Container(
+                              // padding: EdgeInsets.all(5.0),
+                              // decoration: BoxDecoration(
+                              //   shape: BoxShape.circle,
+                              //   color: globals.Reminds[index].categoryColor,
+                              // ),
+                              child: Icon(
+                                globals.Reminds[index].categoryIcon,
+                                color: globals.Reminds[index].categoryColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                        content: SingleChildScrollView(
+                          child: ListBody(
+                            children: <Widget>[
+                              Text(
+                                "Notes: ${globals.Reminds[index].reminderNotes}",
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 7.0,
+                              ),
+                              Text(
+                                "Time: ${globals.Reminds[index].reminderDate}, ${globals.Reminds[index].reminderTime}",
+                                style: TextStyle(fontSize: 18.0),
+                              ),
+                              // SizedBox(
+                              //   height: 5.0,
+                              // ),
+                              // Text(
+                              //   "Time: ${globals.Reminds[index].reminderTime}",
+                              //   style: TextStyle(fontSize: 18.0),
+                              // ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
               ),
             );
           },
         ),
-        ElevatedButton(
-            onPressed: () => setState(() => globals.counter++),
-            child: Text("refresh")),
       ],
     );
   }

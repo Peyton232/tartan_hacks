@@ -252,6 +252,7 @@ class _CalendarScreenState extends State<CalendarScreen>
       children: <Widget>[
         ElevatedButton(
           style: ElevatedButton.styleFrom(
+            minimumSize: Size(10, 30),
             primary: _selectedView == CalendarView.monthly
                 ? Colors.deepPurple[300]
                 : Colors.deepPurple[100],
@@ -277,6 +278,7 @@ class _CalendarScreenState extends State<CalendarScreen>
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
+            minimumSize: Size(10, 30),
             primary: _selectedView == CalendarView.biweekly
                 ? Colors.deepPurple[300]
                 : Colors.deepPurple[100],
@@ -302,6 +304,7 @@ class _CalendarScreenState extends State<CalendarScreen>
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
+            minimumSize: Size(10, 30),
             primary: _selectedView == CalendarView.weekly
                 ? Colors.deepPurple[300]
                 : Colors.deepPurple[100],

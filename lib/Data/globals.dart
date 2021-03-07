@@ -11,57 +11,74 @@ int counter = 0;
 final selectedDay = DateTime.now();
 
 //hardcoded a few starting ones
+//TODO; Show top 5
 List<EventCard> Events = [
   EventCard(
-    eventName: "Event Name 1",
-    eventNotes: "Calendar Notes",
-    eventDate: "March 7",
-    eventTime: "5:00 PM",
-    categoryIcon: Icons.description,
-    categoryColor: kBlue,
+    eventName: "TartanHacks Day 1",
+    eventNotes: "Brainstorm and start working on UI",
+    eventDate: "March 5",
+    eventTime: "12:00 PM",
+    categoryIcon: Icons.local_cafe,
+    categoryColor: kRed,
   ),
   EventCard(
-    eventName: "Event Name 2",
-    eventNotes: "Calendar Notes",
+    eventName: "TartanHacks Day 2",
+    eventNotes: "Continue UI, fix database, and configure AI",
     eventDate: "March 6",
-    eventTime: "5:00 PM",
-    categoryIcon: Icons.directions_run,
+    eventTime: "11:00 AM",
+    categoryIcon: Icons.local_cafe,
+    categoryColor: kRed,
+  ),
+  EventCard(
+    eventName: "TartanHacks Day 3",
+    eventNotes: "Finalize the features and made video",
+    eventDate: "March 7",
+    eventTime: "8:00 AM",
+    categoryIcon: Icons.local_cafe,
+    categoryColor: kRed,
+  ),
+  EventCard(
+    eventName: "Virtual Restaurant",
+    eventNotes: "Continue the UI and basic functionality",
+    eventDate: "March 8",
+    eventTime: "11:30 AM",
+    categoryIcon: Icons.laptop_mac,
     categoryColor: kGreen,
   ),
   EventCard(
-    eventName: "Event Name 3",
-    eventNotes: "Calendar Notes",
-    eventDate: "March 5",
-    eventTime: "5:00 PM",
+    eventName: "Work Project",
+    eventNotes: "Start UI based on Google",
+    eventDate: "March 11",
+    eventTime: "4:00 PM",
     categoryIcon: Icons.home,
-    categoryColor: kRed,
+    categoryColor: kYellow,
   )
 ];
 
 List<ReminderCard> Reminds = [
   ReminderCard(
-    reminderName: "Reminder Name 1",
-    reminderNotes: "Reminder Notes",
-    reminderDate: "March 5",
-    reminderTime: "10:00 PM",
-    categoryIcon: Icons.check,
-    categoryColor: kRed,
-  ),
-  ReminderCard(
-    reminderName: "Reminder Name 2",
-    reminderNotes: "Reminder Notes",
-    reminderDate: "March 5",
-    reminderTime: "10:00 PM",
-    categoryIcon: Icons.check,
+    reminderName: "Feed Cat",
+    reminderNotes: "Don't put too much food",
+    reminderDate: "Today",
+    reminderTime: "12:30 PM",
+    categoryIcon: Icons.push_pin,
     categoryColor: kBlue,
   ),
   ReminderCard(
-    reminderName: "Reminder Name 3",
-    reminderNotes: "Reminder Notes",
-    reminderDate: "March 5",
-    reminderTime: "10:00 PM",
-    categoryIcon: Icons.check,
-    categoryColor: kRed,
+    reminderName: "Vacuum Room",
+    reminderNotes: "Charge the battery after",
+    reminderDate: "Today",
+    reminderTime: "3:00 PM",
+    categoryIcon: Icons.push_pin,
+    categoryColor: kBlue,
+  ),
+  ReminderCard(
+    reminderName: "Do 4600 Midterm",
+    reminderNotes: "Go through notes",
+    reminderDate: "Tomorrow",
+    reminderTime: "9:00 AM",
+    categoryIcon: Icons.push_pin,
+    categoryColor: kGreen,
   ),
 ];
 

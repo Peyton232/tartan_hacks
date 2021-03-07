@@ -45,6 +45,7 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                     },
                     child: Icon(Icons.add),
                     style: ElevatedButton.styleFrom(
+                      minimumSize: Size(10, 30),
                       primary: Colors.deepPurple[300],
                       elevation: 3,
                       shape: RoundedRectangleBorder(
@@ -95,7 +96,8 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => CategoryTemplatePage(
-                              categoryName: "(Category)",
+                              categoryName: "School Events",
+                              categoryColor: kRed,
                             ),
                           ),
                         );
@@ -116,7 +118,8 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => CategoryTemplatePage(
-                              categoryName: "(Category)",
+                              categoryName: "School",
+                              categoryColor: kGreen,
                             ),
                           ),
                         );
@@ -137,7 +140,8 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => CategoryTemplatePage(
-                              categoryName: "(Category)",
+                              categoryName: "Chores",
+                              categoryColor: kBlue,
                             ),
                           ),
                         );
@@ -158,7 +162,8 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => CategoryTemplatePage(
-                              categoryName: "(Category)",
+                              categoryName: "Work",
+                              categoryColor: kYellow,
                             ),
                           ),
                         );

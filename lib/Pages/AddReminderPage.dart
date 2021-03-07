@@ -260,23 +260,23 @@ class MyCustomFormState extends State<MyCustomForm> {
                         //add data to list
                         if (color == 'blue') {
                           //catIcon = Icons.home;
-                          catIcon = Icons.check;
+                          catIcon = Icons.push_pin;
                           catColor = Colors.blue;
                         } else if (color == 'yellow') {
                           // catIcon = Icons.directions_car;
-                          catIcon = Icons.check;
+                          catIcon = Icons.push_pin;
                           catColor = Colors.yellow;
                         } else if (color == 'red') {
                           //catIcon = Icons.free_breakfast;
-                          catIcon = Icons.check;
+                          catIcon = Icons.push_pin;
                           catColor = Colors.red;
                         } else if (color == 'green') {
                           //catIcon = Icons.computer;
-                          catIcon = Icons.check;
+                          catIcon = Icons.push_pin;
                           catColor = Colors.green;
                         } else {
                           //catIcon = Icons.face;
-                          catIcon = Icons.check;
+                          catIcon = Icons.push_pin;
                           catColor = Colors.purple;
                         }
                         globals.Reminds.add(ReminderCard(
@@ -287,7 +287,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                           categoryIcon: catIcon,
                           categoryColor: catColor,
                         ));
-                        setState(() {});
+                        Navigator.pop(context);
                       }
                     },
                     child: Text('Add Reminder'),

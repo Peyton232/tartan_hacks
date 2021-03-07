@@ -16,7 +16,6 @@ class EventTemplatePage extends StatefulWidget {
     @required this.eventTime,
     @required this.categoryIcon,
     @required this.categoryColor,
-
   });
 
   @override
@@ -29,6 +28,13 @@ class _EventTemplatePageState extends State<EventTemplatePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.eventName),
+      ),
+      body: Column(
+        children: <Widget>[
+          Text(widget.eventNotes),
+          Text(widget.eventDate),
+          Text(widget.eventTime),
+        ],
       ),
     );
   }

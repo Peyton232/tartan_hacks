@@ -37,21 +37,7 @@ class _ReminderCardState extends State<ReminderCard> {
         ),
       ),
       onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ReminderTemplatePage(
-              //Navigate to subpage
-              reminderName: widget.reminderName,
-              reminderNotes: widget.reminderNotes,
-              reminderDate: widget.reminderDate,
-              reminderTime: widget.reminderTime,
-              categoryIcon: widget.categoryIcon,
-              categoryColor: widget.categoryColor,
-            ),
-          ),
-        );
-        //widget.buttonPressed();
+        widget.buttonPressed();
       },
       child: Container(
         width: 330,
@@ -59,20 +45,21 @@ class _ReminderCardState extends State<ReminderCard> {
         child: Row(
           children: <Widget>[
             Container(
-              height: kCardCircleDimensions,
-              width: kCardCircleDimensions,
-              decoration: BoxDecoration(
-                color: widget.categoryColor,
-                borderRadius: BorderRadius.circular(30),
-              ),
+              // height: kCardCircleDimensions,
+              // width: kCardCircleDimensions,
+              // decoration: BoxDecoration(
+              //   color: widget.categoryColor,
+              //   borderRadius: BorderRadius.circular(30),
+              // ),
               child: Icon(
                 widget.categoryIcon,
                 size: 30.0,
+                color: widget.categoryColor,
               ),
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.only(left: 12.0, top: 12.0),
+                padding: EdgeInsets.only(left: 12.0, top: 21.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -80,10 +67,10 @@ class _ReminderCardState extends State<ReminderCard> {
                       widget.reminderName,
                       style: kEventTitleTextStyle,
                     ),
-                    Text(
-                      "Notes: ${widget.reminderNotes}",
-                      style: kEventNotesTextStyle,
-                    ),
+                    // Text(
+                    //   "Notes: ${widget.reminderNotes}",
+                    //   style: kEventNotesTextStyle,
+                    // ),
                   ],
                 ),
               ),

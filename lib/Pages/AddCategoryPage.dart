@@ -193,8 +193,56 @@ class _AddCategoryPageState extends State<AddCategoryPage> {
               "Category Icon:",
               style: kHeaderTextStyle,
             ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Icon(
+                    Icons.home,
+                    size: 40.0,
+                    color: Colors.grey[400],
+                  ),
+                  Icon(
+                    Icons.laptop_mac,
+                    size: 40.0,
+                  ),
+                  Icon(
+                    Icons.local_cafe,
+                    size: 40.0,
+                    color: Colors.grey[400],
+                  ),
+                  Icon(
+                    Icons.directions_car,
+                    size: 40.0,
+                    color: Colors.grey[400],
+                  ),
+                  Icon(
+                    Icons.directions_run,
+                    size: 40.0,
+                    color: Colors.grey[400],
+                  ),
+                ],
+              ),
+            ),
             //TODO: Add icon selection
-
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.deepPurple[300],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text('Add Category'),
+                ),
+              ),
+            ),
           ],
         ),
       ),
