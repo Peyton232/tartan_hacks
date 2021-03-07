@@ -88,6 +88,30 @@ class _UpcomingEventsState extends State<UpcomingEvents> {
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
+                        actionsPadding: EdgeInsets.all(10.0),
+                        actions: <Widget>[
+                          GestureDetector(
+                            child: Row(
+                              children: <Widget>[
+                                Text(
+                                  "Done",
+                                  style: TextStyle(
+                                    color: Colors.green,
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.check,
+                                  color: Colors.green,
+                                  size: 25.0,
+                                ),
+                              ],
+                            ),
+                            onTap: () {
+                              //TODO: Delete things from global list
+                            },
+                          ),
+                        ],
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.0),
                         ),
