@@ -88,7 +88,7 @@ class _CategoriesContainerState extends State<CategoriesContainer> {
                     ),
                     child: CategoryCard(
                       categoryName: "Events",
-                      amountOfItems: 0,
+                      amountOfItems: globals.Events.length,
                       categoryIcon: Icons.free_breakfast,
                       categoryColor: kRed,
                       buttonPressed: () {
